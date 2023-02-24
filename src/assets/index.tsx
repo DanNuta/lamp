@@ -24,7 +24,6 @@ import img16 from "../assets/images/catalogImages/16.jpeg";
 import img17 from "../assets/images/catalogImages/17.jpeg";
 import img18 from "../assets/images/catalogImages/18.jpeg";
 
-
 interface Icon {
   [key: string]: React.ReactNode;
 }
@@ -36,7 +35,7 @@ interface Images {
 export const icons: Icon = {
   hanburgher: <MenuIcon />,
   cancel: <CloseIcon />,
-  filter: <FilterAltIcon/>
+  filter: <FilterAltIcon />,
 };
 
 export const images: Images = {
@@ -45,10 +44,8 @@ export const images: Images = {
   imagesHeader3: imagesHeader3,
 };
 
-
-
 interface filterImages {
-  [key: string]: string,
+  [key: string]: string;
 }
 
 export const filterImages = {
@@ -66,5 +63,4 @@ export const filterImages = {
   filter13: img11,
   filter14: img12,
   filter15: img13,
-
-}
+};

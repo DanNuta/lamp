@@ -1,7 +1,15 @@
 import * as Style from "./VButton.style";
-import { Props } from "./type";
+import { BtnProps, LinkProps } from "./type";
+import { Link } from "react-router-dom";
 
-export const VButton: React.FC<Props> = (props) => {
-    
-  return <Style.Button {...props.cssStyle} onClick={props.onHaandler}>{props.title}</Style.Button>;
+export const VButton: React.FC<BtnProps> = (props) => {
+  return (
+    <Style.Button {...props.cssStyle} onClick={props.onHandler}>
+      {props.title}
+    </Style.Button>
+  );
+};
+
+export const ButtonLink: React.FC<LinkProps> = (props) => {
+  return <Style.LinkSyle to={`${props.href}`}>gfgfgfgf</Style.LinkSyle>;
 };

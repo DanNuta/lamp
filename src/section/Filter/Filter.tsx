@@ -1,39 +1,37 @@
 import { FilterView } from "../Filter/Filter.view";
-import {filterItem} from "../../constants";
+import { filterItem } from "../../constants";
 import React from "react";
-import { PropsFilter } from "../../constants/data/item";
-import {icons} from "../../assets";
+import { PropsFilter } from "../../constants/data/type";
 
-const filter = new Set(filterItem.map(item => item.filter));
+const filter = new Set(filterItem.map((item) => item.filter));
 const filterElement = [...filter];
 
 export const Filter: React.FC = () => {
   const [filter, setFilter] = React.useState<PropsFilter[]>([]);
   const [filterCheck, setFilterCheck] = React.useState<boolean>(false);
 
-
   React.useEffect(() => {
-    filterItemFn(filterElement[0])
-  }, [])
+    filterItemFn(filterElement[0]);
+  }, []);
 
-  function cheackFilterBtn(){
-    setFilterCheck(prev => !prev)
+  function cheackFilterBtn() {
+    setFilterCheck((prev) => !prev);
   }
 
+  function filterItemFn(data: string) {
+    console.log("click");
 
+    const filterArray = filterItem.filter((item) => item.filter === data);
 
-  function filterItemFn(data: string){
-
-    const filterArray = filterItem.filter(item => item.filter === data);
-
-    setFilter(prev => prev = filterArray);
-
+    setFilter((prev) => (prev = filterArray));
   }
-  return <FilterView 
-            onHandlerFilter={filterItemFn}
-            onhandlerFilterBtn={cheackFilterBtn}
-            filterCategory={filterElement} 
-            filterCheck={filterCheck}
-            filter={filter}
-            />;
+  return (
+    <FilterView
+      onHandlerFilter={filterItemFn}
+      onHandlerFilterBtn={cheackFilterBtn}
+      filterCategory={filterElement}
+      filterCheck={filterCheck}
+      filter={filter}
+    />
+  );
 };

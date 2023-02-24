@@ -6,11 +6,10 @@ import { DescriptionAbout } from "../../constants";
 import React from "react";
 
 export const About: React.FC = () => {
-
   const [readMore, setReadMore] = React.useState<boolean>(true);
 
-  function readMoreFn(){
-    setReadMore(prev => !prev);
+  function readMoreFn() {
+    setReadMore((prev) => !prev);
   }
 
   return (
@@ -24,13 +23,19 @@ export const About: React.FC = () => {
 
         <Style.ContainerItem>
           <Style.ContainerItemDiv>
-          <Style.Paragraph>
-            {readMore ? DescriptionAbout.substring(0, 1200) : DescriptionAbout}
-          </Style.Paragraph>
-         {readMore &&  <Style.Div></Style.Div>}
+            <Style.Paragraph>
+              {readMore
+                ? DescriptionAbout.substring(0, 1200)
+                : DescriptionAbout}
+            </Style.Paragraph>
+            {readMore && <Style.Div></Style.Div>}
           </Style.ContainerItemDiv>
 
-          <VButton cssStyle={{bg: "transparent", color: "black", border: "black", }}  title="Read more" onHaandler={readMoreFn} />
+          <VButton
+            cssStyle={{ bg: "transparent", color: "black", border: "black" }}
+            title="Read more"
+            onHaandler={readMoreFn}
+          />
         </Style.ContainerItem>
       </Style.Container>
     </Container>

@@ -1,9 +1,9 @@
-import { PropsFilter } from "../../constants/data/item";
+import { PropsFilter } from "../../constants/data/type";
 
 export interface Props {
-    filterCategory: string[],
-    onHandlerFilter: (data: string) => void,
-    onhandlerFilterBtn: () => void,
-    filterCheck: boolean;
-    filter: PropsFilter[]
+  filterCategory: string[];
+  onHandlerFilter: (data: string) => void;
+  onHandlerFilterBtn: () => void;
+  filterCheck: boolean;
+  filter: PropsFilter[];
 }
