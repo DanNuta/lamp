@@ -1,8 +1,9 @@
 import * as Style from "./Filter.style";
 import { Container } from "@mui/system";
-import { VButton, VFilterItem } from "../../components";
+import { VButton, VFilterItem, VFilterBtn } from "../../components";
 import { Props } from "./type";
 import { Grid } from "@mui/material";
+
 
 export const FilterView: React.FC<Props> = (props) => {
   return (
@@ -10,22 +11,13 @@ export const FilterView: React.FC<Props> = (props) => {
       <Style.H1>Catalog</Style.H1>
 
       <Style.ContainerDiv>
-        <Style.FilterCategory>
-          {props.filterCategory.map((item, i) => {
-            return (
-              <VButton
-                key={i}
-                onHandler={() => props.onHandlerFilter(item)}
-                title={`${item}`}
-                cssStyle={{
-                  color: "black",
-                  border: "black",
-                  bg: "transparent",
-                }}
-              />
-            );
-          })}
-        </Style.FilterCategory>
+        
+
+        <VFilterBtn
+         filterCategory={props.filterCategory}
+         onHandlerFilter={props.onHandlerFilter}
+         filterData={props.filter[0].filter}
+         />
 
         <Grid container spacing={3}>
           {props.filter.map((item, i) => {

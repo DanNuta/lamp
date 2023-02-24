@@ -39,9 +39,9 @@ export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
       </CardContent>
 
       <CardActions>
-        <Button id="/" size="small" color="primary">
-          Share
-        </Button>
+      
+
+        <a href="#">Share</a>
       </CardActions>
     </Card>
   );

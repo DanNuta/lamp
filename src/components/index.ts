@@ -4,6 +4,7 @@ import { Slider } from "./Slide/Slide";
 import { VButton, ButtonLink } from "./VButton/VButton";
 import { VFilterItem } from "./VItemFIlter/VItemFilter";
 import { VDots } from "./VDots/VDots";
+import { VFilterBtn } from "./VFilterBtn/VFilterBtn";
 
 export {
   Burgher,
@@ -13,4 +14,5 @@ export {
   VFilterItem,
   ButtonLink,
   VDots,
+  VFilterBtn
 };
