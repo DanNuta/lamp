@@ -5,6 +5,7 @@ import { VButton, ButtonLink } from "./VButton/VButton";
 import { VFilterItem } from "./VItemFIlter/VItemFilter";
 import { VDots } from "./VDots/VDots";
 import { VFilterBtn } from "./VFilterBtn/VFilterBtn";
+import { VCountryNumber } from "./VCountryNumber/VCountryNumber";
 
 export {
   Burgher,
@@ -14,5 +15,6 @@ export {
   VFilterItem,
   ButtonLink,
   VDots,
-  VFilterBtn
+  VFilterBtn,
+  VCountryNumber,
 };

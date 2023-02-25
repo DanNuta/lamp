@@ -24,6 +24,8 @@ import img16 from "../assets/images/catalogImages/16.jpeg";
 import img17 from "../assets/images/catalogImages/17.jpeg";
 import img18 from "../assets/images/catalogImages/18.jpeg";
 
+import parallaxImage from "../assets/images/paralexEffect.jpg";
+
 interface Icon {
   [key: string]: React.ReactNode;
 }
@@ -42,6 +44,7 @@ export const images: Images = {
   imagesHeader: imagesHeader,
   imagesHeader2: imagesHeader2,
   imagesHeader3: imagesHeader3,
+  parallax: parallaxImage,
 };
 
 interface filterImages {

@@ -6,7 +6,6 @@ export const HomeView: React.FC = () => {
   return (
     <Style.Main>
       {slider.map((item, i) => {
-        console.log("render");
         return <Slider key={i} {...item} lenght={slider.length} index={i} />;
       })}
     </Style.Main>

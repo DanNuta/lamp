@@ -16,10 +16,12 @@
     "@mui/styled-engine-sc": "^5.11.9",
     "@mui/system": "^5.11.9",
     "@types/styled-components": "^5.1.26",
+    "country-codes-list": "^1.6.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "tss-react": "^4.6.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

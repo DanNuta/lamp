@@ -1,3 +1,9 @@
+import * as Style from "./Slogan.style";
+
 export const SloganView: React.FC = () => {
-  return <h1>Slogan</h1>;
+  return (
+    <Style.Container>
+      <Style.H1>Lorem imsum dolor </Style.H1>
+    </Style.Container>
+  );
 };

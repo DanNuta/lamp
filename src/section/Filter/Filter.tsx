@@ -19,8 +19,6 @@ export const Filter: React.FC = () => {
   }
 
   function filterItemFn(data: string) {
-    console.log("click");
-
     const filterArray = filterItem.filter((item) => item.filter === data);
 
     setFilter((prev) => (prev = filterArray));
