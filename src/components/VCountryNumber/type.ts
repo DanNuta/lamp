@@ -13,6 +13,7 @@ export interface FlagProps {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
   valueNumber?: string | null;
+  error_telefon?: string | null;
 }
 
 export interface CounterViewProps extends FlagProps {

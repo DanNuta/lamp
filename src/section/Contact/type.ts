@@ -5,7 +5,17 @@ export interface PropsData {
   nameCountry: string;
 }
 
-export interface PropsView {
+export interface StateProps {
+  nume?: string;
+  email: string;
+  telefon: string;
+  message?: string;
+
+  error_email: string;
+  error_telefon: string;
+}
+
+export interface PropsView extends StateProps {
   country?: PropsData[];
   searchCountry: (data: string) => void;
   numeFn: (
@@ -21,15 +31,7 @@ export interface PropsView {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
   submit: () => void;
-  email?: string | null;
-  nume?: string | null;
-  telefon?: string | null;
-  message?: string | null;
-  err_email?: string | null;
 }
-
-
-
 
 export enum Type {
   EMAIL = "EMAIL",
@@ -38,24 +40,10 @@ export enum Type {
   TELEFON = "TELEFON",
 
   ERROR_EMAIL = "ERROR_EMAIL",
-  ERROR_NUME = "ERROR_NUME",
-  ERROR_MESSAGE = "ERROR_MESSAGE",
   ERROR_TELEFON = "ERROR_TELEFON",
 }
-
-
 
 export interface Action {
   type: Type;
   payload: string;
-}
-
-export interface StateProps {
-  nume?: string | null;
-  email?: string | null;
-  telefon?: string | null;
-  message?: string | null;
-
-  error_email: string | null;
-  error_telefon: string | null;
 }

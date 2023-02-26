@@ -14,14 +14,16 @@ export const VCountryNumberView: React.FC<CounterViewProps> = (props) => {
         />
 
         <TextField
+          required
           value={props.valueNumber}
-          error={false}
+          error={props.error_telefon === "" ? false : true}
           id="outlined-error"
           label="Telephone"
           variant="standard"
           type="number"
           fullWidth
           onChange={(e) => props.onHandlerNumberInput(e)}
+          helperText={props.error_telefon === "" ? "" : props.error_telefon}
         />
       </Style.FlagNumber>
 

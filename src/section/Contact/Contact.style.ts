@@ -4,10 +4,10 @@ import Button from "@mui/material/Button";
 import { styled as styleMui } from "@mui/material/styles";
 
 export const Form = styled.form`
- ${Flex({
+  ${Flex({
     flexDirection: DirectionRow.colunm,
-    gap: "20px"
-})}
+    gap: "20px",
+  })}
 `;
 
 export const H1 = styled.h1``;

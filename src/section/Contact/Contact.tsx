@@ -16,13 +16,13 @@ export const Contact: React.FC = () => {
   }, [country]);
 
   const defaultState: StateProps = {
-    nume: null,
-    email: null,
-    telefon: null,
-    message: null,
+    nume: "",
+    email: "",
+    telefon: "",
+    message: "",
 
-    error_email: null,
-    error_telefon: null,
+    error_email: "",
+    error_telefon: "",
   };
 
   function reducerFn(state: StateProps, action: Action): StateProps {
@@ -33,10 +33,10 @@ export const Contact: React.FC = () => {
         return { ...state, nume: payload };
         break;
       case Type.EMAIL:
-        return { ...state, error_email: null, email: payload };
+        return { ...state, error_email: "", email: payload };
         break;
       case Type.TELEFON:
-        return { ...state, telefon: payload };
+        return { ...state, error_telefon: "", telefon: payload };
         break;
       case Type.MESSAGE:
         return { ...state, message: payload };
@@ -45,7 +45,9 @@ export const Contact: React.FC = () => {
       case Type.ERROR_EMAIL:
         return { ...state, error_email: payload };
         break;
-
+      case Type.ERROR_TELEFON:
+        return { ...state, error_telefon: payload };
+        break;
       default:
         return { ...state };
     }
@@ -87,11 +89,7 @@ export const Contact: React.FC = () => {
   ) {
     const value = e.target.value;
 
-    if (!pattern.email.test(value)) {
-      dispach({ type: Type.ERROR_EMAIL, payload: "Acesta nu este un email" });
-    } else {
-      dispach({ type: Type.EMAIL, payload: value });
-    }
+    dispach({ type: Type.EMAIL, payload: value });
   }
 
   function telefonFn(
@@ -110,9 +108,36 @@ export const Contact: React.FC = () => {
   }
 
   function submitData() {
+    if (!pattern.email.test(state.email) && state.telefon === "") {
+      dispach({
+        type: Type.ERROR_TELEFON,
+        payload: "Trebuie sa introduci in numar de telefon",
+      });
 
-    
-    console.log("click");
+      dispach({
+        type: Type.ERROR_EMAIL,
+        payload: "Acest email nu este valid",
+      });
+    }
+
+    if (!pattern.email.test(state.email)) {
+      dispach({
+        type: Type.ERROR_EMAIL,
+        payload: "Acest email nu este valid",
+      });
+    } else if (state.telefon === "") {
+      dispach({
+        type: Type.ERROR_TELEFON,
+        payload: "Trebuie sa introduci in numar de telefon",
+      });
+    } else {
+      dispach({ type: Type.EMAIL, payload: "" });
+      dispach({ type: Type.MESSAGE, payload: "" });
+      dispach({ type: Type.NUME, payload: "" });
+      dispach({ type: Type.TELEFON, payload: "" });
+      dispach({ type: Type.ERROR_TELEFON, payload: "" });
+      dispach({ type: Type.ERROR_EMAIL, payload: "" });
+    }
   }
 
   return (
@@ -127,7 +152,8 @@ export const Contact: React.FC = () => {
       email={state.email}
       telefon={state.telefon}
       message={state.message}
-      err_email={state.error_email}
+      error_email={state.error_email}
+      error_telefon={state.error_telefon}
       submit={submitData}
     />
   );

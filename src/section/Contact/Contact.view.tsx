@@ -3,6 +3,7 @@ import { Container } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import { PropsData, PropsView } from "./type";
 import { VCountryNumber } from "../../components";
+import { pattern } from "./regEx";
 
 export const ContactView: React.FC<PropsView> = (props) => {
   return (
@@ -22,8 +23,8 @@ export const ContactView: React.FC<PropsView> = (props) => {
         <TextField
           value={props.email}
           required
-          helperText={props.err_email}
-          error={props.err_email === null ? false : true}
+          helperText={props.error_email}
+          error={props.error_email === "" ? false : true}
           id="standard-basic"
           label="Email"
           variant="standard"
@@ -36,6 +37,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
           searchCountry={props.searchCountry}
           onHandlerNumberInput={props.telefonFn}
           valueNumber={props.telefon}
+          error_telefon={props.error_telefon}
         />
 
         <TextField
@@ -49,8 +51,9 @@ export const ContactView: React.FC<PropsView> = (props) => {
           value={props.message}
         />
 
-        <Style.ButtonForm onClick={props.submit} variant="contained">Click</Style.ButtonForm>
-
+        <Style.ButtonForm onClick={props.submit} variant="contained">
+          Click
+        </Style.ButtonForm>
       </Style.Form>
     </Container>
   );

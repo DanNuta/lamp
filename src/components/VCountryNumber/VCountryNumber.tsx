@@ -45,6 +45,7 @@ export const VCountryNumber: React.FC<FlagProps> = (props) => {
       searchCountry={props.searchCountry}
       onHandlerNumberInput={props.onHandlerNumberInput}
       valueNumber={props.valueNumber}
+      error_telefon={props.error_telefon}
     />
   );
 };
