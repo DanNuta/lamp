@@ -3,17 +3,20 @@ import { PropsData } from "../../section/Contact/type";
 export interface Props {
   flags?: string;
   code?: number;
-  numeCountry?: string
+  numeCountry?: string;
 }
 
 export interface FlagProps {
   countryName?: PropsData[];
-  searchCountry: (data: string) => void
+  searchCountry: (data: string) => void;
+  onHandlerNumberInput: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 }
 
 export interface CounterViewProps extends FlagProps {
   moreCountry: boolean;
   moreCountryFn: () => void;
   stateCountryCode: Props;
-  updateInitialFlag: (data: Props) => void
+  updateInitialFlag: (data: Props) => void;
 }

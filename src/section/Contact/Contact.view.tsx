@@ -1,15 +1,10 @@
 import * as Style from "./Contact.style";
 import { Container } from "@mui/system";
 import TextField from "@mui/material/TextField";
-import { PropsData } from "./type";
+import { PropsData, PropsView } from "./type";
 import MenuItem from "@mui/material/MenuItem";
 import { Typography } from "@mui/material";
 import { VCountryNumber } from "../../components";
-
-interface PropsView {
-  country?: PropsData[];
-  searchCountry: (data: string) => void
-}
 
 export const ContactView: React.FC<PropsView> = (props) => {
   return (
@@ -22,6 +17,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
           label="Nume"
           variant="standard"
           type="text"
+          onChange={(e) => props.numeFn(e)}
         />
 
         <TextField
@@ -30,12 +26,14 @@ export const ContactView: React.FC<PropsView> = (props) => {
           label="Email"
           variant="standard"
           type="text"
+          onChange={(e) => props.emailFn(e)}
         />
 
-        <VCountryNumber 
+        <VCountryNumber
           countryName={props.country}
           searchCountry={props.searchCountry}
-           />
+          onHandlerNumberInput={props.telefonFn}
+        />
 
         <TextField
           id="standard-basic"
@@ -43,6 +41,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
           variant="standard"
           type="text"
           multiline
+          onChange={(e) => props.messageFn(e)}
           maxRows={4}
         />
       </Style.Form>

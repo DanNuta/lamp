@@ -3,6 +3,7 @@ import { VCountry } from "../VCountry/VCountry";
 import TextField from "@mui/material/TextField";
 import { CounterViewProps } from "./type";
 import { VContainer } from "../VCountryContainer/VContainer";
+import PhoneInput from "react-phone-number-input";
 
 export const VCountryNumberView: React.FC<CounterViewProps> = (props) => {
   return (
@@ -19,8 +20,10 @@ export const VCountryNumberView: React.FC<CounterViewProps> = (props) => {
           label="Telephone"
           variant="standard"
           type="number"
+          onChange={(e) => props.onHandlerNumberInput(e)}
         />
       </Style.FlagNumber>
+
       {props.moreCountry && (
         <VContainer
           onHandler={props.updateInitialFlag}

@@ -4,38 +4,33 @@ import React from "react";
 import { Props } from "./type";
 
 export const VCountryNumber: React.FC<FlagProps> = (props) => {
-
-
-  const defaultData: Props ={
+  const defaultData: Props = {
     flags: props.countryName?.[0]?.flags,
     code: props.countryName?.[0]?.iddRoot,
     numeCountry: props.countryName?.[0]?.nameCountry,
-  }
+  };
 
   const [showMoreCountry, setShowMoreCountry] = React.useState(false);
   const [flagCode, setFlagCode] = React.useState<Props>(defaultData);
 
-
   React.useEffect(() => {
-    setFlagCode(prev => {
-      return defaultData
-    })
-  },[props.countryName])
+    setFlagCode((prev) => {
+      return defaultData;
+    });
+  }, [props.countryName]);
 
   function showMoreCountryFn() {
     setShowMoreCountry((prev) => !prev);
   }
 
-
-  function updateInitialFlag(data: Props){
-    setFlagCode(prev => {
+  function updateInitialFlag(data: Props) {
+    setFlagCode((prev) => {
       return {
         flags: data.flags,
         code: data.code,
-        numeCountry: data.numeCountry
-      }
-    })
-
+        numeCountry: data.numeCountry,
+      };
+    });
 
     setShowMoreCountry((prev) => !prev);
   }
@@ -48,6 +43,7 @@ export const VCountryNumber: React.FC<FlagProps> = (props) => {
       stateCountryCode={flagCode}
       updateInitialFlag={updateInitialFlag}
       searchCountry={props.searchCountry}
+      onHandlerNumberInput={props.onHandlerNumberInput}
     />
   );
 };

@@ -8,8 +8,6 @@ interface PropsCountry {
 }
 
 export const VCountry: React.FC<PropsCountry> = (props) => {
-
-
   return (
     <Style.Container onClick={props.onHandler}>
       <Style.Image src={`${props.flagCountry.flags}`} />
