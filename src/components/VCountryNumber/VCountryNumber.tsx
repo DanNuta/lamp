@@ -9,6 +9,7 @@ export const VCountryNumber: React.FC<FlagProps> = (props) => {
   const defaultData: Props ={
     flags: props.countryName?.[0]?.flags,
     code: props.countryName?.[0]?.iddRoot,
+    numeCountry: props.countryName?.[0]?.nameCountry,
   }
 
   const [showMoreCountry, setShowMoreCountry] = React.useState(false);
@@ -30,9 +31,11 @@ export const VCountryNumber: React.FC<FlagProps> = (props) => {
     setFlagCode(prev => {
       return {
         flags: data.flags,
-        code: data.code
+        code: data.code,
+        numeCountry: data.numeCountry
       }
     })
+
 
     setShowMoreCountry((prev) => !prev);
   }
@@ -44,6 +47,7 @@ export const VCountryNumber: React.FC<FlagProps> = (props) => {
       moreCountryFn={showMoreCountryFn}
       stateCountryCode={flagCode}
       updateInitialFlag={updateInitialFlag}
+      searchCountry={props.searchCountry}
     />
   );
 };

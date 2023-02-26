@@ -1,29 +1,49 @@
 import * as Style from "./VContainer.style";
 import { FlagProps } from "../VCountryNumber/type";
 import { Typography } from "@mui/material";
-import {Props as PropsFlagsCode} from "../VCountryNumber/type";
+import {ItemData , ItemProps, Props} from "./type";
+import TextField from '@mui/material/TextField';
+import { ChangeEvent } from "react";
 
-interface Item {
-  flags: string;
-  iddRoot: number;
-  suffixes?: number;
-  nameCountry: string;
+
+interface SearchProps {
+  searchCountry: (data: string) => void
 }
 
-interface ItemProps extends Item {
-  onHandlerItem: (data: PropsFlagsCode) => void;
-  state: PropsFlagsCode
-}
 
-interface Props {
-  countryName?: Item[];
-  onHandler: (data: PropsFlagsCode) => void;
-  stateCurent: PropsFlagsCode
+
+export const SearchElement: React.FC<SearchProps> = (props) => {
+
+  function searchCountry(e: ChangeEvent<HTMLInputElement>){
+    const value = e.target.value
+
+    props.searchCountry(value)
+  
+  }
+
+  return (
+    <TextField 
+    placeholder="Search a country"
+    onChange={searchCountry}
+    />
+  )
 }
 
 export const Item: React.FC<ItemProps> = (props) => {
+
+  const data = {
+    code: props.iddRoot, 
+    flags: props.flags, 
+    numeCountry: props.nameCountry
+  }
+
+
   return (
-    <Style.ContainerItemFlag onClick={() => props.onHandlerItem({code: props.iddRoot, flags: props.flags})}>
+    <Style.ContainerItemFlag 
+       itemState={props.state.numeCountry}
+       itemCurent={props.nameCountry} 
+       onClick={() => props.onHandlerItem(data)}
+       >
       <Style.ImagesFlags src={`${props.flags}`} />
       <Style.CountryName>{props.nameCountry}</Style.CountryName>
       <Typography>{`(${props.iddRoot})`}</Typography>
@@ -31,9 +51,13 @@ export const Item: React.FC<ItemProps> = (props) => {
   );
 };
 
+
 export const VContainer: React.FC<Props> = (props) => {
   return (
     <Style.CountryFlag>
+
+      <SearchElement searchCountry={props.seachCountry}/>
+
       {props.countryName?.map((item) => {
         return <Item 
               state={props.stateCurent}

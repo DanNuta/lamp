@@ -26,6 +26,7 @@ export const VCountryNumberView: React.FC<CounterViewProps> = (props) => {
           onHandler={props.updateInitialFlag}
           countryName={props.countryName}
           stateCurent={props.stateCountryCode}
+          seachCountry={props.searchCountry}
         />
       )}
     </Style.Container>

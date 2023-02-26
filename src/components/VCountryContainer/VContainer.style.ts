@@ -3,6 +3,11 @@ import { Flex, Center, DirectionRow } from "../../Css/ReutilizableCss";
 import { styled as styleMui } from '@mui/material/styles';
 import { Typography } from "@mui/material";
 
+interface Props {
+  itemState?: string,
+  itemCurent?: string
+}
+
 export const CountryFlag = styled.div`
   height: 250px;
   width: 300px;
@@ -10,19 +15,20 @@ export const CountryFlag = styled.div`
   overflow-y: scroll;
   box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.31);
   padding: 8px;
-
+  
   &::-webkit-scrollbar {
     display: none;
-}
-
+  }
+  
   ${Flex({ gap: "25px", flexDirection: DirectionRow.colunm })}
-`;
+  `;
 
-export const ContainerItemFlag = styled.div`
+export const ContainerItemFlag = styled.div<Props>`
   ${Flex({ alignItems: "center" })};
   height: 25px;
   cursor: pointer;
   padding-inline: 9px;
+  color: ${props => props.itemCurent === props.itemState ? "blue" : "black"};
 `;
 
 export const ImagesFlags = styled.img`
@@ -34,5 +40,5 @@ export const ImagesFlags = styled.img`
 
 
 export const CountryName = styleMui(Typography)`
-  color: "red";
+  
 `

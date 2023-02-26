@@ -8,6 +8,7 @@ import { VCountryNumber } from "../../components";
 
 interface PropsView {
   country?: PropsData[];
+  searchCountry: (data: string) => void
 }
 
 export const ContactView: React.FC<PropsView> = (props) => {
@@ -31,7 +32,10 @@ export const ContactView: React.FC<PropsView> = (props) => {
           type="text"
         />
 
-        <VCountryNumber countryName={props.country} />
+        <VCountryNumber 
+          countryName={props.country}
+          searchCountry={props.searchCountry}
+           />
 
         <TextField
           id="standard-basic"

@@ -26,5 +26,16 @@ export const Contact: React.FC = () => {
     }
   }
 
-  return <ContactView country={countryList} />;
+
+  function searchCountry(value: string){
+
+    console.log(value, "element")
+
+  }
+
+
+  return <ContactView 
+           country={countryList}
+           searchCountry={searchCountry}
+            />;
 };
