@@ -38,10 +38,8 @@ export const Contact: React.FC = () => {
     telefon: string | null;
     message?: string | null;
 
-    error_nume?: string | null;
     error_email: string | null;
     error_telefon: string | null;
-    error_message?: string | null;
   }
 
   const defaultState: StateProps = {
@@ -50,10 +48,8 @@ export const Contact: React.FC = () => {
     telefon: null,
     message: null,
 
-    error_nume: null,
     error_email: null,
     error_telefon: null,
-    error_message: null,
   };
 
   function reducerFn(state: StateProps, action: Action): StateProps {
@@ -64,13 +60,17 @@ export const Contact: React.FC = () => {
         return { ...state, nume: payload };
         break;
       case Type.EMAIL:
-        return { ...state, email: payload };
+        return { ...state, error_email: null, email: payload };
         break;
       case Type.TELEFON:
         return { ...state, telefon: payload };
         break;
       case Type.MESSAGE:
         return { ...state, message: payload };
+        break;
+
+      case Type.ERROR_EMAIL:
+        return { ...state, error_email: payload };
         break;
 
       default:
@@ -112,19 +112,32 @@ export const Contact: React.FC = () => {
   function emailFn(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
-    console.log(e.target.value);
+    const value = e.target.value;
+
+    if (!pattern.email.test(value)) {
+      dispach({ type: Type.ERROR_EMAIL, payload: "Acesta nu este un email" });
+    } else {
+      dispach({ type: Type.EMAIL, payload: value });
+    }
   }
 
   function telefonFn(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
-    console.log(e.target.value);
+    const value = e.target.value;
+
+    dispach({ type: Type.TELEFON, payload: value });
   }
 
   function messageFn(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
-    console.log(e.target.value);
+    const value = e.target.value;
+    dispach({ type: Type.MESSAGE, payload: value });
+  }
+
+  function submitData() {
+    console.log("click");
   }
 
   return (
@@ -135,6 +148,12 @@ export const Contact: React.FC = () => {
       emailFn={emailFn}
       telefonFn={telefonFn}
       messageFn={messageFn}
+      nume={state.nume}
+      email={state.email}
+      telefon={state.telefon}
+      message={state.message}
+      err_email={state.error_email}
+      submit={submitData}
     />
   );
 };

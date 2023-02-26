@@ -15,6 +15,7 @@ export const VCountryNumberView: React.FC<CounterViewProps> = (props) => {
         />
 
         <TextField
+          value={props.valueNumber}
           error={false}
           id="outlined-error"
           label="Telephone"

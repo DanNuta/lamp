@@ -2,8 +2,6 @@ import * as Style from "./Contact.style";
 import { Container } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import { PropsData, PropsView } from "./type";
-import MenuItem from "@mui/material/MenuItem";
-import { Typography } from "@mui/material";
 import { VCountryNumber } from "../../components";
 
 export const ContactView: React.FC<PropsView> = (props) => {
@@ -11,8 +9,9 @@ export const ContactView: React.FC<PropsView> = (props) => {
     <Container>
       <Style.H1>Form</Style.H1>
 
-      <Style.Form>
+      <Style.Form autoComplete="off" onSubmit={props.submit}>
         <TextField
+          value={props.nume}
           id="standard-basic"
           label="Nume"
           variant="standard"
@@ -21,7 +20,10 @@ export const ContactView: React.FC<PropsView> = (props) => {
         />
 
         <TextField
+          value={props.email}
           required
+          helperText={props.err_email}
+          error={props.err_email === null ? false : true}
           id="standard-basic"
           label="Email"
           variant="standard"
@@ -33,6 +35,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
           countryName={props.country}
           searchCountry={props.searchCountry}
           onHandlerNumberInput={props.telefonFn}
+          valueNumber={props.telefon}
         />
 
         <TextField
@@ -43,7 +46,10 @@ export const ContactView: React.FC<PropsView> = (props) => {
           multiline
           onChange={(e) => props.messageFn(e)}
           maxRows={4}
+          value={props.message}
         />
+
+        <Style.ButtonForm variant="contained">Click</Style.ButtonForm>
       </Style.Form>
     </Container>
   );

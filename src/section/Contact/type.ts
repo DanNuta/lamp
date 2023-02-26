@@ -20,4 +20,10 @@ export interface PropsView {
   messageFn: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
+  submit: () => void;
+  email: string | null;
+  nume?: string | null;
+  telefon: string | null;
+  message?: string | null;
+  err_email?: string | null;
 }

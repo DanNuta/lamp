@@ -44,6 +44,7 @@ export const VCountryNumber: React.FC<FlagProps> = (props) => {
       updateInitialFlag={updateInitialFlag}
       searchCountry={props.searchCountry}
       onHandlerNumberInput={props.onHandlerNumberInput}
+      valueNumber={props.valueNumber}
     />
   );
 };

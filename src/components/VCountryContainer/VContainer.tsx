@@ -51,9 +51,10 @@ export const VContainer: React.FC<Props> = (props) => {
       <SearchElement searchCountry={props.seachCountry} />
 
       <Style.ContainerEachCountry>
-        {props.countryName?.map((item) => {
+        {props.countryName?.map((item, i) => {
           return (
             <Item
+              key={i}
               state={props.stateCurent}
               onHandlerItem={props.onHandler}
               {...item}
