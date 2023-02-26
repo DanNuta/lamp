@@ -9,7 +9,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
     <Container>
       <Style.H1>Form</Style.H1>
 
-      <Style.Form autoComplete="off" onSubmit={props.submit}>
+      <Style.Form autoComplete="off">
         <TextField
           value={props.nume}
           id="standard-basic"
@@ -49,7 +49,8 @@ export const ContactView: React.FC<PropsView> = (props) => {
           value={props.message}
         />
 
-        <Style.ButtonForm variant="contained">Click</Style.ButtonForm>
+        <Style.ButtonForm onClick={props.submit} variant="contained">Click</Style.ButtonForm>
+
       </Style.Form>
     </Container>
   );

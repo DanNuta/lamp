@@ -12,7 +12,7 @@ export interface FlagProps {
   onHandlerNumberInput: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
-  valueNumber: string | null;
+  valueNumber?: string | null;
 }
 
 export interface CounterViewProps extends FlagProps {
@@ -20,5 +20,5 @@ export interface CounterViewProps extends FlagProps {
   moreCountryFn: () => void;
   stateCountryCode: Props;
   updateInitialFlag: (data: Props) => void;
-  valueNumber: string | null;
+  valueNumber?: string | null;
 }

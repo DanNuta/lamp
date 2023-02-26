@@ -34,7 +34,7 @@ export const About: React.FC = () => {
           <VButton
             cssStyle={{ bg: "transparent", color: "black", border: "black" }}
             title="Read more"
-            onHaandler={readMoreFn}
+            onHandler={readMoreFn}
           />
         </Style.ContainerItem>
       </Style.Container>

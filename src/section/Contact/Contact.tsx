@@ -1,6 +1,6 @@
 import { ContactView } from "./Contact.view";
 import { useFetchCountry } from "../../hooks/useFetchCountry";
-import { PropsData } from "./type";
+import { PropsData, Type, Action, StateProps } from "./type";
 import React, { useReducer } from "react";
 import { pattern } from "./regEx";
 
@@ -14,33 +14,6 @@ export const Contact: React.FC = () => {
       return (prev = country);
     });
   }, [country]);
-
-  enum Type {
-    EMAIL = "EMAIL",
-    NUME = "NUME",
-    MESSAGE = "MESSAGE",
-    TELEFON = "TELEFON",
-
-    ERROR_EMAIL = "ERROR_EMAIL",
-    ERROR_NUME = "ERROR_NUME",
-    ERROR_MESSAGE = "ERROR_MESSAGE",
-    ERROR_TELEFON = "ERROR_TELEFON",
-  }
-
-  interface Action {
-    type: Type;
-    payload: string;
-  }
-
-  interface StateProps {
-    nume?: string | null;
-    email: string | null;
-    telefon: string | null;
-    message?: string | null;
-
-    error_email: string | null;
-    error_telefon: string | null;
-  }
 
   const defaultState: StateProps = {
     nume: null,
@@ -137,6 +110,8 @@ export const Contact: React.FC = () => {
   }
 
   function submitData() {
+
+    
     console.log("click");
   }
 
