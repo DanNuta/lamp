@@ -1,61 +1,41 @@
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const nodemailer = require("nodemailer");
+const cors = require("cors")({ origin: true });
+admin.initializeApp();
 
-const functions = require('firebase-functions');
-const nodemailer = require('nodemailer');
-
-//when this cloud function is already deployed, change the origin to 'https://your-deployed-app-url
-const cors = require('cors')({ origin: true });
-
-//create and config transporter
+/**
+ * Here we're using Gmail to send
+ */
 let transporter = nodemailer.createTransport({
-  host: 'your host',
-  port: 25,
-  secure: true, // true for 465, false for other ports
+  service: "gmail",
   auth: {
-    user: 'dany.condurari@gmail.com',
-    pass: 'Dan#Nuta010',
+    user: "dany.condurari@gmail.com",
+    pass: "Dan#Nuta010",
   },
 });
 
-//export the cloud function called `sendEmail`
-exports.sendEmail = functions.https.onRequest((req: any, res: any) => {
-  //for testing purposes
-  console.log(
-    'from sendEmail function. The request object is:',
-    JSON.stringify(req.body)
-  );
-
-  //enable CORS using the `cors` express middleware.
+exports.sendMail = functions.https.onRequest((req: any, res: any) => {
   cors(req, res, () => {
-    //get contact form data from the req and then assigned it to variables
-    const email = req.body.data.email;
-    const name = req.body.data.name;
-    const message = req.body.data.message;
+    // getting dest email by query string
+    const dest = req.query.dest;
 
-    //config the email message
     const mailOptions = {
-      from: email,
-      to: `dany.condurari@gmail.com`,
-      subject: 'New message from the nodemailer-form app',
-      text: `${name} says: ${message}`,
+      from: "<dany.condurari@gmail.com>", // Something like: Jane Doe <janedoe@gmail.com>
+      to: dest,
+      subject: "I'M A PICKLE!!!", // email subject
+      html: `<p style="font-size: 16px;">Pickle Riiiiiiiiiiiiiiiick!!</p>
+              <br />
+              <img src="https://images.prod.meredith.com/product/fc8754735c8a9b4aebb786278e7265a5/1538025388228/l/rick-and-morty-pickle-rick-sticker" />
+          `, // email content in HTML
     };
 
-    //call the built in `sendMail` function and return different responses upon success and failure
-    return transporter.sendMail(mailOptions, (error: any, info: any) => {
-      if (error) {
-        return res.status(500).send({
-          data: {
-            status: 500,
-            message: error.toString(),
-          },
-        });
+    // returning result
+    return transporter.sendMail(mailOptions, (erro: any, info: any) => {
+      if (erro) {
+        return res.send(erro.toString());
       }
-
-      return res.status(200).send({
-        data: {
-          status: 200,
-          message: 'sent',
-        },
-      });
+      return res.send("Sended");
     });
   });
 });
