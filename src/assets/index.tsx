@@ -1,5 +1,11 @@
 import React from "react";
-import { MenuIcon, CloseIcon, FilterAltIcon } from "./icons/icons";
+import {
+  MenuIcon,
+  CloseIcon,
+  FilterAltIcon,
+  ArrowForwardIosIcon,
+  ArrowBackIosNewIcon,
+} from "./icons/icons";
 
 import imagesHeader from "../assets/images/lampHomePage.jpg";
 import imagesHeader2 from "../assets/images/lampHomePage2.jpg";
@@ -38,6 +44,8 @@ export const icons: Icon = {
   hanburgher: <MenuIcon />,
   cancel: <CloseIcon />,
   filter: <FilterAltIcon />,
+  next: <ArrowForwardIosIcon />,
+  prev: <ArrowBackIosNewIcon />,
 };
 
 export const images: Images = {
@@ -67,3 +75,16 @@ export const filterImages = {
   filter14: img12,
   filter15: img13,
 };
+
+export const imagesGalery = [
+  img1, img2, img3, img4,img5,
+img6,
+img7,
+img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+
+];

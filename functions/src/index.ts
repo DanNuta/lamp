@@ -4,38 +4,54 @@ const nodemailer = require("nodemailer");
 const cors = require("cors")({ origin: true });
 admin.initializeApp();
 
-/**
- * Here we're using Gmail to send
- */
+//create and config transporter
 let transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, // true for 465, false for other ports
   auth: {
-    user: "dany.condurari@gmail.com",
-    pass: "Dan#Nuta010",
+    user: "dany.condurari@email.com",
+    pass: "dehxddkclddvaanm",
   },
 });
 
-exports.sendMail = functions.https.onRequest((req: any, res: any) => {
+exports.sendEmail = functions.https.onRequest((req: any, res: any) => {
+  //for testing purposes
+  console.log(
+    "from sendEmail function. The request object is:",
+    JSON.stringify(req.body)
+  );
+
+  //enable CORS using the `cors` express middleware.
   cors(req, res, () => {
-    // getting dest email by query string
-    const dest = req.query.dest;
+    // const email = req.body.data.email;
+    // const name = req.body.data.name;
+    // const message = req.body.data.message;
 
     const mailOptions = {
-      from: "<dany.condurari@gmail.com>", // Something like: Jane Doe <janedoe@gmail.com>
-      to: dest,
-      subject: "I'M A PICKLE!!!", // email subject
-      html: `<p style="font-size: 16px;">Pickle Riiiiiiiiiiiiiiiick!!</p>
-              <br />
-              <img src="https://images.prod.meredith.com/product/fc8754735c8a9b4aebb786278e7265a5/1538025388228/l/rick-and-morty-pickle-rick-sticker" />
-          `, // email content in HTML
+      from: "dany.condurari@gmail.com",
+      to: `dany.condurari@email.com`,
+      subject: "New message from the nodemailer-form app",
+      text: `Salut gmail`,
     };
 
-    // returning result
-    return transporter.sendMail(mailOptions, (erro: any, info: any) => {
-      if (erro) {
-        return res.send(erro.toString());
+    //call the built in `sendMail` function and return different responses upon success and failure
+    return transporter.sendMail(mailOptions, (error: any, info: any) => {
+      if (error) {
+        return res.status(500).send({
+          data: {
+            status: 500,
+            message: error.toString(),
+          },
+        });
       }
-      return res.send("Sended");
+
+      return res.status(200).send({
+        data: {
+          status: 200,
+          message: "sent",
+        },
+      });
     });
   });
 });
