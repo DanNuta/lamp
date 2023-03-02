@@ -5,7 +5,9 @@ import { imagesGalery } from "../../assets";
 
 export const Galery: React.FC = () => {
   const [data, setData] = React.useState<dataProps>({ img: "", i: 0 });
-  const [images, setimages] = React.useState<string[]>(imagesGalery.slice(0, 6))
+  const [images, setimages] = React.useState<string[]>(
+    imagesGalery.slice(0, 6)
+  );
 
   function showImage(img: string, i: number) {
     setData((prev) => {
@@ -38,8 +40,8 @@ export const Galery: React.FC = () => {
         };
       } else {
         return {
-          img: imagesGalery[prev.i++],
-          i: prev.i++,
+          img: imagesGalery[prev.i + 1],
+          i: prev.i + 1,
         };
       }
     });
@@ -54,41 +56,38 @@ export const Galery: React.FC = () => {
         };
       } else {
         return {
-          img: imagesGalery[prev.i-1],
-          i: prev.i-1,
+          img: imagesGalery[prev.i - 1],
+          i: prev.i - 1,
         };
       }
     });
   }
 
-
-
-  function showMoreItems(){
+  function showMoreItems() {
     const checkLength = imagesGalery.length - images.length;
 
-    console.log(checkLength)
-    
-    if(checkLength > 6){
+    console.log(checkLength);
+
+    if (checkLength > 6) {
       const lengthElement = images.length + 3;
       const newItem = imagesGalery.slice(0, lengthElement);
-          setimages(prev => {
-            return prev = newItem
-          })
-    }else{
+      setimages((prev) => {
+        return (prev = newItem);
+      });
+    } else {
       const newItem = imagesGalery.slice(0, imagesGalery.length);
-      setimages(prev => {
-        return prev = newItem
-      })
+      setimages((prev) => {
+        return (prev = newItem);
+      });
     }
 
-    if(imagesGalery.length === images.length){
+    if (imagesGalery.length === images.length) {
       const newItem = imagesGalery.slice(0, 6);
-          setimages(prev => {
-            return prev = newItem
-          })
+      setimages((prev) => {
+        return (prev = newItem);
+      });
     }
   }
-
 
   return (
     <GaleryView

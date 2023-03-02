@@ -2,15 +2,12 @@ import styled from "styled-components";
 import { Center, Flex } from "../../Css/ReutilizableCss";
 import IconButton from "@mui/material/IconButton";
 import { styled as styleMui } from "@mui/material/styles";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import { Container } from "@mui/system";
 
-
-
 export const ContainerDiv = styled.div`
-${Flex({justifyContent: Center.center})}
-
-`
+  ${Flex({ justifyContent: Center.center })}
+`;
 
 export const ContainerImages = styled.div`
   width: 100%;
@@ -33,6 +30,7 @@ export const ImageElementClick = styled.div``;
 
 export const Image = styled.img`
   object-fit: cover;
+  cursor: pointer;
 `;
 
 export const CloseIcon = styled.div`
@@ -54,8 +52,6 @@ background-color: white;
 }
 
 `;
-
-
 
 export const ButtonStyle = styleMui(Button)`
 display: flex;

@@ -10,5 +10,5 @@ export interface GaleryType {
   nextBtn: () => void;
   prevBtn: () => void;
   images: string[];
-  showMoreItems(): void
+  showMoreItems(): void;
 }

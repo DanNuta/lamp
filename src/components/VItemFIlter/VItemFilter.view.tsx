@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { VDots } from "../";
 import { PropsFilterItem } from "./type";
-import { Link } from "react-router-dom";
 
 export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
   return (
@@ -17,7 +16,7 @@ export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
           return (
             <Style.ImagesContainer key={i} index={props.index} i={i}>
               <CardMedia component="img" height="100%" image={`${item}`} />
-              <Style.BackroundElement></Style.BackroundElement>
+              <Style.BackroundElement />
             </Style.ImagesContainer>
           );
         })}

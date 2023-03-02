@@ -13,7 +13,5 @@ export const Form = styled.form`
 export const H1 = styled.h1``;
 
 export const ButtonForm = styleMui(Button)`
-
 border-radius: 100px;
-
 `;

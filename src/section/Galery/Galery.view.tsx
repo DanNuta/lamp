@@ -8,8 +8,6 @@ import { icons } from "../../assets";
 export const GaleryView: React.FC<GaleryType> = (props) => {
   return (
     <Container>
-
-     
       <h1>Galery</h1>
 
       {props.data.img && (
@@ -42,13 +40,11 @@ export const GaleryView: React.FC<GaleryType> = (props) => {
         </Masonry>
       </ResponsiveMasonry>
 
-      <Style.ButtonStyle
-      onClick={props.showMoreItems}
-       variant="contained"
-      >
-        {props.images.length === imagesGalery.length ? "Show Less" : "Show More"}
-        </Style.ButtonStyle>
-      
+      <Style.ButtonStyle onClick={props.showMoreItems} variant="contained">
+        {props.images.length === imagesGalery.length
+          ? "Show Less"
+          : "Show More"}
+      </Style.ButtonStyle>
     </Container>
   );
 };
