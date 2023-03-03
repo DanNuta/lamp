@@ -1,35 +1,32 @@
-import React, {useRef, useEffect}from 'react';
-import L from 'leaflet';
-import 'leaflet-providers';
+import React, { useRef, useEffect } from "react";
+import L from "leaflet";
+import "leaflet-providers";
 
 interface Props {
-  lat: number,
-  lng: number,
-  text: string
+  lat: number;
+  lng: number;
+  text: string;
 }
 
 export const MapView: React.FC = () => {
-
   const mapRef = useRef<any>(null);
 
   useEffect(() => {
-
     const markerOptions = {
       title: "My Marker",
       alt: "A marker for my location",
       draggable: true,
     };
 
-      const map = L.map(mapRef.current).setView([47.695, 28.900], 13);
-      
-      // Adaugă o imagine de fundal pentru hartă
-      L.tileLayer.provider('CartoDB.Positron').addTo(map); // Aici se schimba stilul hartii cu "BasemapAT.grau"
-      L.marker([47.695, 28.900]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
-    
+    const map = L.map(mapRef.current).setView([47.695, 28.9], 13);
 
+    // Adaugă o imagine de fundal pentru hartă
+    L.tileLayer.provider("CartoDB.Positron").addTo(map); // Aici se schimba stilul hartii cu "BasemapAT.grau"
+    L.marker([47.695, 28.9])
+      .addTo(map)
+      .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
+      .openPopup();
   }, []);
 
-  return <div ref={mapRef} style={{ height: '500px', width: "100%" }} />;
+  return <div ref={mapRef} style={{ height: "500px", width: "100%" }} />;
 };

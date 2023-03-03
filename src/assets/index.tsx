@@ -7,6 +7,9 @@ import {
   ArrowBackIosNewIcon,
 } from "./icons/icons";
 
+import {Logo} from "./images/logo/logo"
+
+
 import imagesHeader from "../assets/images/lampHomePage.jpg";
 import imagesHeader2 from "../assets/images/lampHomePage2.jpg";
 import imagesHeader3 from "../assets/images/lampHomePage3.jpg";
@@ -29,6 +32,8 @@ import img15 from "../assets/images/catalogImages/15.jpeg";
 import img16 from "../assets/images/catalogImages/16.jpeg";
 import img17 from "../assets/images/catalogImages/17.jpeg";
 import img18 from "../assets/images/catalogImages/18.jpeg";
+
+import logo from "./images/logo/logo.svg";
 
 import parallaxImage from "../assets/images/paralexEffect.jpg";
 
@@ -91,3 +96,7 @@ export const imagesGalery = [
   img12,
   img13,
 ];
+
+
+
+export {Logo}

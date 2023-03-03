@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Flex, Center } from "../../Css/ReutilizableCss";
 import { theme } from "../../Css/BreakPoints";
+import { Link } from "react-router-dom";
 
 interface Props {
   state: boolean;
@@ -16,7 +17,10 @@ export const Header = styled.header`
 
 export const Navigation = styled.nav``;
 
-export const LogoContainer = styled.div``;
+export const LogoContainer = styled.div`
+width: 100px;
+height: 100%;
+`;
 
 export const Ul = styled.ul`
   display: none;
@@ -65,3 +69,16 @@ export const BarsNav = styled.div`
 `;
 
 export const MobileContainer = styled.div<Props>``;
+
+
+export const Logo = styled.img`
+
+path{
+  fill: red
+}
+
+width: 100%;
+height: 100%;
+`
+
+
