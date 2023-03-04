@@ -1,6 +1,9 @@
-import styled from "styled-components";
+// import styled from "styled-components";
+import styled from "@emotion/styled";
+import { Box } from "@mui/system";
 import { images } from "../../assets";
 import { Flex, Center } from "../../Css/ReutilizableCss";
+import { Typography } from "@mui/material";
 
 export const Container = styled.div`
   width: 100%;
@@ -10,7 +13,20 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  ${Flex({ alignItems: "center", justifyContent: Center.center })}
-`;
+  position: relative;
+  display: table;
+  `;
 
-export const H1 = styled.h1``;
+
+
+export const ContainerBg = styled(Box)`
+display: table-cell;
+vertical-align: middle;
+height: 100%;
+text-align: center;
+
+`
+
+export const H1 = styled(Typography)`
+font-style: italic;
+`;

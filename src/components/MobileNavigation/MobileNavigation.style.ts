@@ -42,3 +42,6 @@ export const ContainerLogoForMobile = styled.div`
   ${Flex({ alignItems: "center", justifyContent: Center.flexBetween })};
   margin-bottom: 65px;
 `;
+
+
+export const AHref = styled.a``

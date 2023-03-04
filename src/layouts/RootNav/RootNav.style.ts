@@ -12,7 +12,6 @@ export const Header = styled.header`
   ${Flex({ alignItems: "center", justifyContent: Center.flexBetween })}
   height: 80px;
   background-color: white;
-  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
 `;
 
 export const Navigation = styled.nav``;
@@ -34,7 +33,9 @@ export const Ul = styled.ul`
   }
 `;
 
-export const AHref = styled.a``;
+export const AHref = styled.a`
+color: black;
+`;
 
 export const Li = styled.li`
   position: relative;
@@ -47,7 +48,7 @@ export const Li = styled.li`
     width: 0%;
     height: 3px;
     background-color: red;
-    bottom: -12px;
+    bottom: -28px;
     left: 0;
     transition: 0.3s;
   }
@@ -71,10 +72,6 @@ export const BarsNav = styled.div`
 export const MobileContainer = styled.div<Props>``;
 
 export const Logo = styled.img`
-  path {
-    fill: red;
-  }
-
   width: 100%;
   height: 100%;
 `;

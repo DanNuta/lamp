@@ -7,7 +7,7 @@ import { icons } from "../../assets";
 
 export const GaleryView: React.FC<GaleryType> = (props) => {
   return (
-    <Container>
+    <Container id="galery">
       <h1>Galery</h1>
 
       {props.data.img && (

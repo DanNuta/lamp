@@ -7,10 +7,10 @@ import { pattern } from "./regEx";
 
 export const ContactView: React.FC<PropsView> = (props) => {
   return (
-    <Container>
+    <Container id="contact">
       <Style.H1>Form</Style.H1>
 
-      <Style.Form autoComplete="off">
+      <Style.Form  autoComplete="off">
         <TextField
           value={props.nume}
           id="standard-basic"

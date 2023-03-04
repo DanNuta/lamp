@@ -13,7 +13,7 @@ export const About: React.FC = () => {
   }
 
   return (
-    <Container>
+    <Container id="about">
       <Style.H1>About</Style.H1>
 
       <Style.Container>

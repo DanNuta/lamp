@@ -20,9 +20,9 @@ export const MobileNavigation: React.FC<MobileType> = (props) => {
         {nav.map((item, i) => {
           return (
             <Style.Li key={i}>
-              <Link onClick={props.onHandeler} to={`#${item}`}>
+              <Style.AHref onClick={props.onHandeler} href={`#${item}`}>
                 {item}
-              </Link>
+              </Style.AHref>
             </Style.Li>
           );
         })}

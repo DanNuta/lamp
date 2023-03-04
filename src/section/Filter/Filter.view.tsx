@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export const FilterView: React.FC<Props> = (props) => {
   return (
-    <Container>
+    <Container id="catalog">
       <Style.H1>Catalog</Style.H1>
 
       <Style.ContainerDiv>

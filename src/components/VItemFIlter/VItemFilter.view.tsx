@@ -33,12 +33,12 @@ export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
           {props.filter}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {props.price}
+          ${props.price}
         </Typography>
       </CardContent>
 
       <CardActions>
-        <a href="#">Share</a>
+        <Style.AHref href="#galery">More info</Style.AHref>
       </CardActions>
     </Card>
   );

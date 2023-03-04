@@ -44,3 +44,7 @@ export const BackroundElement = styled.div`
     rgba(255, 255, 255, 0) 100%
   );
 `;
+
+
+
+export const AHref = styled.a``

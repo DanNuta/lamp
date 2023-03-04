@@ -6,6 +6,7 @@ import {
   ArrowForwardIosIcon,
   ArrowBackIosNewIcon,
   FormatQuoteIcon,
+  FormatQuoteOutlinedIcon
 } from "./icons/icons";
 
 import { Logo } from "./images/logo/logo";
@@ -52,6 +53,7 @@ export const icons: Icon = {
   next: <ArrowForwardIosIcon />,
   prev: <ArrowBackIosNewIcon />,
   quote: <FormatQuoteIcon />,
+  quoteEmpty: <FormatQuoteOutlinedIcon/>
 };
 
 export const images: Images = {
