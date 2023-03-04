@@ -12,12 +12,6 @@ export const MapView: React.FC = () => {
   const mapRef = useRef<any>(null);
 
   useEffect(() => {
-    const markerOptions = {
-      title: "My Marker",
-      alt: "A marker for my location",
-      draggable: true,
-    };
-
     const map = L.map(mapRef.current).setView([47.695, 28.9], 13);
 
     // Adaugă o imagine de fundal pentru hartă

@@ -6,7 +6,7 @@ import {
   Testimonial,
   SloganView,
   Home,
-  Map,
+  MapView,
 } from "../section";
 
 export const HomePage: React.FC = () => {
@@ -18,7 +18,7 @@ export const HomePage: React.FC = () => {
       <SloganView />
       <Galery />
       <Testimonial />
-      <Map />
+      <MapView />
       <Contact />
     </>
   );
