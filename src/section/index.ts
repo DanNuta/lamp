@@ -5,6 +5,6 @@ import { Galery } from "./Galery/Galery";
 import { Testimonial } from "./Testimonials/Testimonial";
 import { SloganView } from "./Slogan/Slogan.view";
 import { Home } from "./Home/Home";
-import { Map } from "./Map/map";
+import { Map } from "./Map/Map";
 
 export { About, Contact, Filter, Galery, Testimonial, SloganView, Home, Map };

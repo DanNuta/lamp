@@ -5,10 +5,10 @@ import {
   FilterAltIcon,
   ArrowForwardIosIcon,
   ArrowBackIosNewIcon,
+  FormatQuoteIcon,
 } from "./icons/icons";
 
-import {Logo} from "./images/logo/logo"
-
+import { Logo } from "./images/logo/logo";
 
 import imagesHeader from "../assets/images/lampHomePage.jpg";
 import imagesHeader2 from "../assets/images/lampHomePage2.jpg";
@@ -51,6 +51,7 @@ export const icons: Icon = {
   filter: <FilterAltIcon />,
   next: <ArrowForwardIosIcon />,
   prev: <ArrowBackIosNewIcon />,
+  quote: <FormatQuoteIcon />,
 };
 
 export const images: Images = {
@@ -97,6 +98,4 @@ export const imagesGalery = [
   img13,
 ];
 
-
-
-export {Logo}
+export { Logo };

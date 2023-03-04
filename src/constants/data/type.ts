@@ -4,3 +4,8 @@ export interface PropsFilter {
   price: number;
   description: string;
 }
+
+export interface testimonial {
+  id: number;
+  testimonial: string;
+}

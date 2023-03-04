@@ -6,6 +6,7 @@ import { VFilterItem } from "./VItemFIlter/VItemFilter";
 import { VDots } from "./VDots/VDots";
 import { VFilterBtn } from "./VFilterBtn/VFilterBtn";
 import { VCountryNumber } from "./VCountryNumber/VCountryNumber";
+import { Testimonial } from "./VTestimonial/VTestimonial";
 
 export {
   Burgher,
@@ -16,5 +17,6 @@ export {
   ButtonLink,
   VDots,
   VFilterBtn,
+  Testimonial,
   VCountryNumber,
 };

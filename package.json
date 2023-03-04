@@ -17,6 +17,7 @@
     "@mui/system": "^5.11.9",
     "@types/styled-components": "^5.1.26",
     "country-codes-list": "^1.6.10",
+    "framer-motion": "^10.0.1",
     "google-map-react": "^2.2.0",
     "leaflet": "^1.9.3",
     "leaflet-providers": "^1.13.0",
@@ -27,8 +28,7 @@
     "react-responsive-masonry": "^2.1.7",
     "react-router-dom": "^6.8.1",
     "styled-components": "^5.3.6",
-    "tss-react": "^4.6.1",
-    "vite-plugin-chunk-split": "^0.4.7"
+    "tss-react": "^4.6.1"
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.7",

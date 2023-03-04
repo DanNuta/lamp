@@ -2,12 +2,11 @@ import { Link, Outlet } from "react-router-dom";
 import * as Style from "./RootNav.style";
 import { Container } from "@mui/material";
 
-import {Logo} from "../../assets";
+import { Logo } from "../../assets";
 
 import { icons } from "../../assets";
 import React from "react";
 import { MobileNavigation } from "../../components/";
-
 
 export const RootNav: React.FC = () => {
   const [burgher, setBurgher] = React.useState<boolean>(false);
@@ -22,7 +21,7 @@ export const RootNav: React.FC = () => {
         <Style.Header>
           <Style.LogoContainer>
             <Link to="#">
-              <Logo/>
+              <Logo />
             </Link>
           </Style.LogoContainer>
 

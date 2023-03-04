@@ -18,8 +18,8 @@ export const Header = styled.header`
 export const Navigation = styled.nav``;
 
 export const LogoContainer = styled.div`
-width: 100px;
-height: 100%;
+  width: 100px;
+  height: 100%;
 `;
 
 export const Ul = styled.ul`
@@ -70,15 +70,11 @@ export const BarsNav = styled.div`
 
 export const MobileContainer = styled.div<Props>``;
 
-
 export const Logo = styled.img`
+  path {
+    fill: red;
+  }
 
-path{
-  fill: red
-}
-
-width: 100%;
-height: 100%;
-`
-
-
+  width: 100%;
+  height: 100%;
+`;
