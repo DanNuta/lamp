@@ -24,6 +24,7 @@ export const ContainerParent = styled.div`
 export const ContainerBtn = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 `;
 
 export const ContainerDiv = styled.div`

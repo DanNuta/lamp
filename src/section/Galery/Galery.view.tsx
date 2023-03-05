@@ -42,12 +42,7 @@ export const GaleryView: React.FC<GaleryType> = (props) => {
           </Masonry>
         </ResponsiveMasonry>
 
-        {/* <Style.ButtonStyle onClick={props.showMoreItems} variant="contained">
-        {props.images.length === imagesGalery.length
-          ? "Show Less"
-          : "Show More"}
-      </Style.ButtonStyle> */}
-
+    
         <Style.ContainerBtn>
           <Btn onClick={props.showMoreItems}>
             {props.images.length === imagesGalery.length

@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import L from "leaflet";
 import "leaflet-providers";
 import { TitleSection } from "../../Css/ElementSame";
+import * as Style from "./Map.style";
 
 interface Props {
   lat: number;
@@ -26,7 +27,7 @@ export const MapView: React.FC = () => {
   return (
     <>
      <TitleSection>Where we are</TitleSection>
-    <div ref={mapRef} style={{ height: "500px", width: "100%" }} />
+     <Style.MapStyle ref={mapRef}/>
     
     </>
   )

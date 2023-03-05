@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import { Flex, Center } from "../../Css/ReutilizableCss";
-import { motion } from "framer-motion";
-import { Grid } from "@mui/material";
 import { styled as styleMui } from "@mui/material/styles";
 import { Container } from "@mui/system";
 import { theme } from "../../Css/BreakPoints";
