@@ -3,6 +3,7 @@ import { useFetchCountry } from "../../hooks/useFetchCountry";
 import { PropsData, Type, Action, StateProps } from "./type";
 import React, { useReducer } from "react";
 import { pattern } from "./regEx";
+import emailjs from "emailjs-com";
 
 export const Contact: React.FC = () => {
   const { country } = useFetchCountry("https://restcountries.com/v3.1/all");
@@ -137,6 +138,14 @@ export const Contact: React.FC = () => {
       dispach({ type: Type.TELEFON, payload: "" });
       dispach({ type: Type.ERROR_TELEFON, payload: "" });
       dispach({ type: Type.ERROR_EMAIL, payload: "" });
+
+
+      emailjs.sendForm('service_lamp', 'template_8o8dmsa', '#myForm')
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
     }
   }
 

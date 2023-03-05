@@ -4,15 +4,17 @@ import TextField from "@mui/material/TextField";
 import { PropsData, PropsView } from "./type";
 import { VCountryNumber } from "../../components";
 import { pattern } from "./regEx";
-import { TitleSection } from "../../Css/ElementSame";
+import { TitleSection, Btn } from "../../Css/ElementSame";
 
 export const ContactView: React.FC<PropsView> = (props) => {
   return (
-    <Container id="Contact">
+
+
+    <Style.ContainerStyle id="Contact">
       <TitleSection>Form</TitleSection>
 
       <Style.Form autoComplete="off">
-        <TextField
+        <Style.TextFieldStyle
           value={props.nume}
           id="standard-basic"
           label="Nume"
@@ -52,10 +54,10 @@ export const ContactView: React.FC<PropsView> = (props) => {
           value={props.message}
         />
 
-        <Style.ButtonForm onClick={props.submit} variant="contained">
-          Click
-        </Style.ButtonForm>
+        <Btn onClick={props.submit} >Contact</Btn>
+
+
       </Style.Form>
-    </Container>
+    </Style.ContainerStyle>
   );
 };
