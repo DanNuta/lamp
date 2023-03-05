@@ -30,16 +30,16 @@ export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
       </Style.ImageSliderItem>
 
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Style.TypographyTitle gutterBottom variant="h5" >
           {props.filter}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
+        </Style.TypographyTitle>
+        <Style.TypographyPrice variant="body2" color="text.secondary">
           ${props.price}
-        </Typography>
+        </Style.TypographyPrice>
       </CardContent>
 
       <CardActions>
-        <Style.AHref href="#galery">More info</Style.AHref>
+        <Style.AHref href="#Galery">More info</Style.AHref>
       </CardActions>
     </Card>
   );

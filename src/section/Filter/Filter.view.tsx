@@ -8,6 +8,8 @@ import { TitleSection, BtnFilter } from "../../Css/ElementSame";
 
 export const FilterView: React.FC<Props> = (props) => {
   return (
+
+    <Style.ContanerTop>
     <Style.ContainerStyle id="Catalog">
       <TitleSection>Catalog</TitleSection>
 
@@ -41,5 +43,7 @@ export const FilterView: React.FC<Props> = (props) => {
         </Grid>
       </Style.ContainerParent>
     </Style.ContainerStyle>
+
+    </Style.ContanerTop>
   );
 };

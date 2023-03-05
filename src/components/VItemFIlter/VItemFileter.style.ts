@@ -2,6 +2,7 @@ import styled from "styled-components";
 import CardMedia from "@mui/material/CardMedia";
 import { styled as styleMui } from "@mui/material/styles";
 import { color } from "../../constants/color";
+import { Typography } from "@mui/material";
 
 interface Props {
   index: number;
@@ -64,3 +65,23 @@ export const AHref = styled.a`
     transition: 0.2s ease-in-out;
   }
 `;
+
+
+
+export const TypographyTitle = styleMui(Typography)`
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+`;
+
+
+export const TypographyPrice = styleMui(Typography)`
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+color: ${color.black};
+`
+
+
