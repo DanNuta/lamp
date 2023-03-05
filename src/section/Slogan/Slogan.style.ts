@@ -35,24 +35,16 @@ export const ContainerBg = styleMui(Box)`
   vertical-align: middle;
   height: 100%;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
-export const H1 = styled.h1`
+export const H1 = styleMui(Typography)`
   font-style: italic;
-  color: ${color.white_gray};
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 34px;
-  background-image: linear-gradient(45deg, #16bffd, #cb3066);
-  background-clip: text;
-  background-position: left;
-  color: transparent;
-  animation-name: ${animation};
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+  color: ${color.white_gray};
 
   ${theme.breakpoints.up("sm")} {
     font-size: 72px;
