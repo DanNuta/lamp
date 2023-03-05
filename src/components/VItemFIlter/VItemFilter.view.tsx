@@ -7,11 +7,11 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { VDots } from "../";
 import { PropsFilterItem } from "./type";
-import { BtnFilter } from "../../Css/ElementSame";
+
 
 export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Style.ParentCard sx={{ maxWidth: 345 }}>
       <Style.ImageSliderItem>
         {props.img.map((item, i) => {
           return (
@@ -30,7 +30,7 @@ export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
       </Style.ImageSliderItem>
 
       <CardContent>
-        <Style.TypographyTitle gutterBottom variant="h5" >
+        <Style.TypographyTitle gutterBottom variant="h5">
           {props.filter}
         </Style.TypographyTitle>
         <Style.TypographyPrice variant="body2" color="text.secondary">
@@ -41,6 +41,6 @@ export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
       <CardActions>
         <Style.AHref href="#Galery">More info</Style.AHref>
       </CardActions>
-    </Card>
+    </Style.ParentCard>
   );
 };

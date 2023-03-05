@@ -53,3 +53,8 @@ export const BtnFilter = styled(Button)(({ theme }) => ({
     border: `1px solid ${color.black}`,
   },
 }));
+
+export const Paraghraph = styled(Typography)`
+  color: ${color.black};
+  text-align: left;
+`;

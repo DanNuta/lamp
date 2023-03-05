@@ -26,9 +26,8 @@ export const MapView: React.FC = () => {
 
   return (
     <>
-     <TitleSection>Where we are</TitleSection>
-     <Style.MapStyle ref={mapRef}/>
-    
+      <TitleSection>Where we are</TitleSection>
+      <Style.MapStyle ref={mapRef} />
     </>
-  )
+  );
 };

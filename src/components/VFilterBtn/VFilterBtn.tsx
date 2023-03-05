@@ -38,7 +38,7 @@ export const VFilterBtn: React.FC<Props> = (props) => {
         return (
           <BtnFilter
             colorText={props.filterData === item ? `${color.black}` : "white"}
-            bg={props.filterData === item ? "transparent" : `${color.black}`}
+            bg={props.filterData === item ? "white" : `${color.black}`}
             border={
               props.filterData === item ? `${color.black}` : "transparent"
             }

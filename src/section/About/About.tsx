@@ -6,6 +6,7 @@ import { DescriptionAbout } from "../../constants";
 import { TitleSection } from "../../Css/ElementSame";
 import { Btn } from "../../Css/ElementSame";
 import React from "react";
+import { Paraghraph } from "../../Css/ElementSame";
 
 export const About: React.FC = () => {
   const [readMore, setReadMore] = React.useState<boolean>(true);
@@ -25,42 +26,31 @@ export const About: React.FC = () => {
 
         <Style.ContainerItem>
           <Style.ContainerItemDiv>
-            {/* <Style.Paragraph>
-              {readMore
-                ? DescriptionAbout.substring(0, 1200)
-                : DescriptionAbout}
-            </Style.Paragraph> */}
-
-            <Style.Paragraph>
-            Lifting people’s quality of life with light - since 2015
-
-            <br/>
-            <br/>
-            
-
-We're passionate about inspiring people to make the most of lighting. The Italian tradition and passion for great lighting combined with world class technology enables us to deliver a wide range of products with a superior combination of lasting quality, great design and user-friendly functionality - at competitive prices.
-
-
-
-<br/>
-            <br/>
-
-Acma's products light up the dark in more than 15 countries and are sold by more than 300 dealers worldwide.
-
-
-
-<br/>
-            <br/>
-
-Acmas Group consists of three brands: Nordlux, Design For The People and Energetic.
-            </Style.Paragraph>
-
-
+          
+            <Paraghraph>
+              Lifting people’s quality of life with light - since 2015
+              <br />
+              <br />
+              We're passionate about inspiring people to make the most of
+              lighting. The Italian tradition and passion for great lighting
+              combined with world class technology enables us to deliver a wide
+              range of products with a superior combination of lasting quality,
+              great design and user-friendly functionality - at competitive
+              prices.
+              <br />
+              <br />
+              Acma's products light up the dark in more than 15 countries and
+              are sold by more than 300 dealers worldwide.
+              <br />
+              <br />
+              Acmas Group consists of three brands: Nordlux, Design For The
+              People and Energetic.
+            </Paraghraph>
 
             {readMore && <Style.Div></Style.Div>}
           </Style.ContainerItemDiv>
 
-          <Btn onClick={readMoreFn}>Read More</Btn>
+          <Btn onClick={readMoreFn}>{readMore ? "Read More" : "Read Less"}</Btn>
         </Style.ContainerItem>
       </Style.ContainerElement>
     </Style.ContainerStyle>

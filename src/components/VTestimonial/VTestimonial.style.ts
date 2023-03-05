@@ -10,7 +10,7 @@ export const Container = styled.div`
   padding-bottom: 30px;
   max-width: 99%;
   flex: 0 0 100%;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   ${theme.breakpoints.up("md")} {
     max-width: 49%;

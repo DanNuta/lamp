@@ -31,6 +31,8 @@ export const GaleryView: React.FC<GaleryType> = (props) => {
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
           <Masonry gutter="20px">
             {props.images.map((item, i) => {
+
+
               return (
                 <Style.Image
                   src={`${item}`}
@@ -42,7 +44,6 @@ export const GaleryView: React.FC<GaleryType> = (props) => {
           </Masonry>
         </ResponsiveMasonry>
 
-    
         <Style.ContainerBtn>
           <Btn onClick={props.showMoreItems}>
             {props.images.length === imagesGalery.length

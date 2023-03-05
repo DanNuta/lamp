@@ -39,7 +39,9 @@ export const H1 = styled.h1`
 
 export const Paragraph = styled.p``;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+`;
 
 export const Div = styled.div`
   background: linear-gradient(
