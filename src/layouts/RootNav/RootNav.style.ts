@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Flex, Center } from "../../Css/ReutilizableCss";
 import { theme } from "../../Css/BreakPoints";
 import { Link } from "react-router-dom";
+import { color } from "../../constants/color";
 
 interface Props {
   state: boolean;
@@ -34,7 +35,11 @@ export const Ul = styled.ul`
 `;
 
 export const AHref = styled.a`
-color: black;
+  color: black;
+  font-size: 16px;
+  color: ${color.black};
+  font-family: "Montserrat";
+  font-weight: 500;
 `;
 
 export const Li = styled.li`
@@ -47,7 +52,7 @@ export const Li = styled.li`
     content: "";
     width: 0%;
     height: 3px;
-    background-color: red;
+    background-color: ${color.black_opacity};
     bottom: -28px;
     left: 0;
     transition: 0.3s;
@@ -60,7 +65,6 @@ export const Li = styled.li`
 
 export const ContainerLogoForMobile = styled.div`
   ${Flex({ alignItems: "center", justifyContent: Center.flexBetween })};
-  background-color: red;
 `;
 
 export const BarsNav = styled.div`

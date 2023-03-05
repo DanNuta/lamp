@@ -3,6 +3,8 @@ import { Container } from "@mui/material";
 import { images } from "../../assets";
 import { VButton } from "../../components";
 import { DescriptionAbout } from "../../constants";
+import { TitleSection } from "../../Css/ElementSame";
+import { Btn } from "../../Css/ElementSame";
 import React from "react";
 
 export const About: React.FC = () => {
@@ -13,10 +15,10 @@ export const About: React.FC = () => {
   }
 
   return (
-    <Container id="about">
-      <Style.H1>About</Style.H1>
+    <Style.ContainerStyle id="About">
+      <TitleSection>About</TitleSection>
 
-      <Style.Container>
+      <Style.ContainerElement>
         <Style.ContainerItem>
           <Style.Image src={images.imagesHeader} />
         </Style.ContainerItem>
@@ -31,13 +33,9 @@ export const About: React.FC = () => {
             {readMore && <Style.Div></Style.Div>}
           </Style.ContainerItemDiv>
 
-          <VButton
-            cssStyle={{ bg: "transparent", color: "black", border: "black" }}
-            title="Read more"
-            onHandler={readMoreFn}
-          />
+          <Btn onClick={readMoreFn}>Read More</Btn>
         </Style.ContainerItem>
-      </Style.Container>
-    </Container>
+      </Style.ContainerElement>
+    </Style.ContainerStyle>
   );
 };

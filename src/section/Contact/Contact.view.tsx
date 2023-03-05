@@ -4,13 +4,14 @@ import TextField from "@mui/material/TextField";
 import { PropsData, PropsView } from "./type";
 import { VCountryNumber } from "../../components";
 import { pattern } from "./regEx";
+import { TitleSection } from "../../Css/ElementSame";
 
 export const ContactView: React.FC<PropsView> = (props) => {
   return (
-    <Container id="contact">
-      <Style.H1>Form</Style.H1>
+    <Container id="Contact">
+      <TitleSection>Form</TitleSection>
 
-      <Style.Form  autoComplete="off">
+      <Style.Form autoComplete="off">
         <TextField
           value={props.nume}
           id="standard-basic"

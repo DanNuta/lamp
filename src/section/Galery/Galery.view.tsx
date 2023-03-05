@@ -4,11 +4,12 @@ import { imagesGalery } from "../../assets";
 import { Container } from "@mui/system";
 import { GaleryType } from "./type";
 import { icons } from "../../assets";
+import { TitleSection, Btn } from "../../Css/ElementSame";
 
 export const GaleryView: React.FC<GaleryType> = (props) => {
   return (
-    <Container id="galery">
-      <h1>Galery</h1>
+    <Style.ContainerStyle id="Galery">
+      <TitleSection>Galery</TitleSection>
 
       {props.data.img && (
         <Style.ContainerImages onClick={props.closeShowItem}>
@@ -26,25 +27,35 @@ export const GaleryView: React.FC<GaleryType> = (props) => {
         </Style.ContainerImages>
       )}
 
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-        <Masonry gutter="20px">
-          {props.images.map((item, i) => {
-            return (
-              <Style.Image
-                src={`${item}`}
-                key={i}
-                onClick={() => props.onShowImage(item, i)}
-              />
-            );
-          })}
-        </Masonry>
-      </ResponsiveMasonry>
+      <Style.ContainerParent>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+          <Masonry gutter="20px">
+            {props.images.map((item, i) => {
+              return (
+                <Style.Image
+                  src={`${item}`}
+                  key={i}
+                  onClick={() => props.onShowImage(item, i)}
+                />
+              );
+            })}
+          </Masonry>
+        </ResponsiveMasonry>
 
-      <Style.ButtonStyle onClick={props.showMoreItems} variant="contained">
+        {/* <Style.ButtonStyle onClick={props.showMoreItems} variant="contained">
         {props.images.length === imagesGalery.length
           ? "Show Less"
           : "Show More"}
-      </Style.ButtonStyle>
-    </Container>
+      </Style.ButtonStyle> */}
+
+        <Style.ContainerBtn>
+          <Btn onClick={props.showMoreItems}>
+            {props.images.length === imagesGalery.length
+              ? "Show Less"
+              : "Show More"}
+          </Btn>
+        </Style.ContainerBtn>
+      </Style.ContainerParent>
+    </Style.ContainerStyle>
   );
 };

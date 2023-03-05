@@ -8,7 +8,7 @@ import { icons } from "../../assets";
 import React from "react";
 import { MobileNavigation } from "../../components/";
 
-const link = ["home", "about", "catalog", "galery", "testinomial", "contact"]
+const link = ["Home", "About", "Catalog", "Galery", "Testinomial", "Contact"];
 
 export const RootNav: React.FC = () => {
   const [burgher, setBurgher] = React.useState<boolean>(false);
@@ -45,15 +45,13 @@ export const RootNav: React.FC = () => {
               : (document.body.style.overflow = "")}
 
             <Style.Ul>
-              
-                {link.map((item, i) => {
-                  return (
-                    <Style.Li key={i}>
-                      <Style.AHref href={`#${item}`}>{item}</Style.AHref>
-                    </Style.Li>
-                  )
-                })}
-             
+              {link.map((item, i) => {
+                return (
+                  <Style.Li key={i}>
+                    <Style.AHref href={`#${item}`}>{item}</Style.AHref>
+                  </Style.Li>
+                );
+              })}
             </Style.Ul>
           </Style.Navigation>
         </Style.Header>

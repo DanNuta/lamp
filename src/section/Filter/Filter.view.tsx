@@ -4,13 +4,14 @@ import { VButton, VFilterItem, VFilterBtn } from "../../components";
 import { Props } from "./type";
 import { Grid } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
+import { TitleSection, BtnFilter } from "../../Css/ElementSame";
 
 export const FilterView: React.FC<Props> = (props) => {
   return (
-    <Container id="catalog">
-      <Style.H1>Catalog</Style.H1>
+    <Style.ContainerStyle id="Catalog">
+      <TitleSection>Catalog</TitleSection>
 
-      <Style.ContainerDiv>
+      <Style.ContainerParent>
         <VFilterBtn
           filterCategory={props.filterCategory}
           onHandlerFilter={props.onHandlerFilter}
@@ -38,7 +39,7 @@ export const FilterView: React.FC<Props> = (props) => {
             })}
           </AnimatePresence>
         </Grid>
-      </Style.ContainerDiv>
-    </Container>
+      </Style.ContainerParent>
+    </Style.ContainerStyle>
   );
 };

@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { VDots } from "../";
 import { PropsFilterItem } from "./type";
+import { BtnFilter } from "../../Css/ElementSame";
 
 export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
   return (

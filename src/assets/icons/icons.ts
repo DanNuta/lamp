@@ -4,7 +4,7 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import FormatQuoteOutlinedIcon from '@mui/icons-material/FormatQuoteOutlined';
+import FormatQuoteOutlinedIcon from "@mui/icons-material/FormatQuoteOutlined";
 
 export {
   MenuIcon,
@@ -13,5 +13,5 @@ export {
   ArrowForwardIosIcon,
   ArrowBackIosNewIcon,
   FormatQuoteIcon,
-  FormatQuoteOutlinedIcon
+  FormatQuoteOutlinedIcon,
 };

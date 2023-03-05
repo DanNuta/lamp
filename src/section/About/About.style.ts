@@ -1,13 +1,26 @@
 import styled from "styled-components";
 import { Flex } from "../../Css/ReutilizableCss";
 import { theme } from "../../Css/BreakPoints";
+import { styled as styleMui } from "@mui/material/styles";
+import { Container } from "@mui/system";
 
-export const Container = styled.div`
+export const ContainerStyle = styleMui(Container)(({ theme }) => ({
+  marginBlock: "80px 80px",
+
+  [theme.breakpoints.up("sm")]: {
+    marginBlock: "130px 130px",
+  },
+}));
+
+export const ContainerElement = styled.div`
   text-align: center;
+  margin-top: 30px;
   ${theme.breakpoints.up("sm")} {
     ${Flex({
       gap: "30px",
     })};
+
+    margin-top: 50px;
   }
 `;
 

@@ -4,6 +4,27 @@ import IconButton from "@mui/material/IconButton";
 import { styled as styleMui } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import { Container } from "@mui/system";
+import { theme } from "../../Css/BreakPoints";
+
+export const ContainerStyle = styleMui(Container)(({ theme }) => ({
+  marginBlock: "80px 80px",
+
+  [theme.breakpoints.up("sm")]: {
+    marginBlock: "130px 130px",
+  },
+}));
+
+export const ContainerParent = styled.div`
+  margin-top: 30px;
+
+  ${theme.breakpoints.up("sm")} {
+    margin-top: 50px;
+  }
+`;
+export const ContainerBtn = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export const ContainerDiv = styled.div`
   ${Flex({ justifyContent: Center.center })}

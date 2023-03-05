@@ -15,18 +15,15 @@ export const Container = styled.div`
   background-attachment: fixed;
   position: relative;
   display: table;
-  `;
-
-
+`;
 
 export const ContainerBg = styled(Box)`
-display: table-cell;
-vertical-align: middle;
-height: 100%;
-text-align: center;
-
-`
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  text-align: center;
+`;
 
 export const H1 = styled(Typography)`
-font-style: italic;
+  font-style: italic;
 `;

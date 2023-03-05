@@ -43,5 +43,4 @@ export const ContainerLogoForMobile = styled.div`
   margin-bottom: 65px;
 `;
 
-
-export const AHref = styled.a``
+export const AHref = styled.a``;

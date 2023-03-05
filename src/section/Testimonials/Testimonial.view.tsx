@@ -4,6 +4,7 @@ import * as Style from "./Testimonials.style";
 import { Testimonial } from "../../components";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { TitleSection } from "../../Css/ElementSame";
 
 export const TestimonialView: React.FC = () => {
   const [width, setWidth] = useState(0);
@@ -19,8 +20,8 @@ export const TestimonialView: React.FC = () => {
   }, []);
 
   return (
-    <Container id="testinomial">
-      <Style.H1>What out customers are saying</Style.H1>
+    <Container id="Testinomial">
+      <TitleSection>What out customers are saying</TitleSection>
 
       <Style.ContainerParent ref={ref}>
         <Style.ContainerChid
