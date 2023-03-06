@@ -46,12 +46,12 @@ export const Image = styled.img`
 export const Div = styled.div`
   background: linear-gradient(
     0deg,
-    rgba(255, 255, 255, 1) 25%,
-    rgba(255, 255, 255, 0.07326680672268904) 100%
+    rgba(242, 242, 242, 1) 0%,
+    rgba(242, 242, 242, 0) 100%
   );
   position: absolute;
   width: 100%;
-  height: 100px;
+  height: 250px;
   bottom: 0;
 `;
 

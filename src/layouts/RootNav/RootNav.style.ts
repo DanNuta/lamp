@@ -11,7 +11,7 @@ export const Container = styled.div``;
 export const Header = styled.header`
   ${Flex({ alignItems: "center", justifyContent: Center.flexBetween })}
   height: 80px;
-  background-color: white;
+  background-color: ${color.bg_color};
 `;
 
 export const Navigation = styled.nav``;

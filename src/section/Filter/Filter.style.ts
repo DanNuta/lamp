@@ -4,13 +4,7 @@ import { Container } from "@mui/system";
 import { theme } from "../../Css/BreakPoints";
 import { color } from "../../constants/color";
 
-export const ContainerStyle = styleMui(Container)(({ theme }) => ({
-  //marginBlock: "80px 80px",
-
-  [theme.breakpoints.up("sm")]: {
-    // marginBlock: "130px 130px",
-  },
-}));
+export const ContainerStyle = styleMui(Container)``;
 
 export const ContainerParent = styled.div`
   margin-top: 30px;
@@ -21,7 +15,7 @@ export const ContainerParent = styled.div`
 `;
 
 export const ContanerTop = styled.div`
-  background-color: ${color.white_gray};
+  // background-color: ${color.white_gray};
   padding-block: 58px;
   margin-bottom: 80px;
 

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { color } from "../constants/color";
 
 export const GlobalStyle = createGlobalStyle`
 *,
@@ -52,6 +53,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: ${color.bg_color};
 }
 
 

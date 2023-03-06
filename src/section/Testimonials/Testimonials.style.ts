@@ -9,7 +9,7 @@ export const H1 = styleMui(Typography)``;
 
 export const ContainerParent = styled(motion.div)`
   overflow: hidden;
-  background-color: ${color.white_gray};
+  //background-color: ${color.white_gray};
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 1px;
@@ -26,7 +26,7 @@ export const ContainerChid = styled(motion.div)`
 `;
 
 export const ContanerTop = styled.div`
-  background-color: ${color.white_gray};
+  // background-color: ${color.white_gray};
   padding-block: 58px;
   margin-bottom: 80px;
 

@@ -14,7 +14,7 @@ export const MobileNavigation: React.FC<MobileType> = (props) => {
   return (
     <Style.Container state={props.state}>
       <Style.ContainerLogoForMobile>
-        <Logo></Logo>
+        <Logo />
         <div onClick={props.onHandeler}>{icons.cancel}</div>
       </Style.ContainerLogoForMobile>
       <Style.Ul>
