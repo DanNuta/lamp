@@ -22,9 +22,9 @@ export const RootNav: React.FC = () => {
       <Style.Container>
         <Style.Header>
           <Style.LogoContainer>
-            <Link to="#">
+            <Style.AHref href="#">
               <Logo />
-            </Link>
+            </Style.AHref>
           </Style.LogoContainer>
 
           {burgher && (

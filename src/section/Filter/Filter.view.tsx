@@ -32,7 +32,7 @@ export const FilterView: React.FC<Props> = (props) => {
                     key={i}
                     xs={12}
                     sm={4}
-                    md={3}
+                    md={4}
                   >
                     <VFilterItem {...item} />
                   </Grid>

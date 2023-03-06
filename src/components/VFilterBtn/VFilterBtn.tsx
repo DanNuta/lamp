@@ -47,20 +47,6 @@ export const VFilterBtn: React.FC<Props> = (props) => {
           >
             {`${item}`}
           </BtnFilter>
-          // <VButton
-          //   key={i}
-          //   onHandler={() => props.onHandlerFilter(item)}
-          //   title={`${item}`}
-          //   cssStyle={{
-          //     color: props.filterData === item ? "white" : "black",
-          //     border:
-          //       props.filterData === item ? "transparent" : "rgba(0, 0, 0)",
-          //     bg:
-          //       props.filterData === item
-          //         ? "rgba(0, 0, 0, 0.4)"
-          //         : "transparent",
-          //   }}
-          // />
         );
       })}
     </Style.FilterCategory>

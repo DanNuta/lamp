@@ -139,13 +139,14 @@ export const Contact: React.FC = () => {
       dispach({ type: Type.ERROR_TELEFON, payload: "" });
       dispach({ type: Type.ERROR_EMAIL, payload: "" });
 
-
-      emailjs.sendForm('service_lamp', 'template_8o8dmsa', '#myForm')
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-       console.log('FAILED...', error);
-    });
+      emailjs.sendForm("service_lamp", "template_8o8dmsa", "#myForm").then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
     }
   }
 

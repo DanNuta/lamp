@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Flex, Center, DirectionRow } from "../../Css/ReutilizableCss";
 import { theme } from "../../Css/BreakPoints";
 import { Transform } from "@mui/icons-material";
+import { color } from "../../constants/color";
 
 interface Props {
   state: boolean;
@@ -43,4 +44,9 @@ export const ContainerLogoForMobile = styled.div`
   margin-bottom: 65px;
 `;
 
-export const AHref = styled.a``;
+export const AHref = styled.a`
+  font-size: 16px;
+  color: ${color.white_gray};
+  font-family: "Montserrat";
+  font-weight: 500;
+`;

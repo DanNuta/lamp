@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Flex, Center } from "../../Css/ReutilizableCss";
 import { theme } from "../../Css/BreakPoints";
-import { Link } from "react-router-dom";
 import { color } from "../../constants/color";
 
 interface Props {
@@ -35,7 +34,6 @@ export const Ul = styled.ul`
 `;
 
 export const AHref = styled.a`
-  color: black;
   font-size: 16px;
   color: ${color.black};
   font-family: "Montserrat";

@@ -26,7 +26,6 @@ export const About: React.FC = () => {
 
         <Style.ContainerItem>
           <Style.ContainerItemDiv>
-          
             <Paraghraph>
               Lifting people’s quality of life with light - since 2015
               <br />

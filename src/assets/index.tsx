@@ -14,6 +14,7 @@ import { Logo } from "./images/logo/logo";
 import imagesHeader from "../assets/images/lampHomePage.jpg";
 import imagesHeader2 from "../assets/images/lampHomePage2.jpg";
 import imagesHeader3 from "../assets/images/lampHomePage3.jpg";
+import header from "../assets/images/header.jpg";
 
 import img1 from "../assets/images/catalogImages/1.jpeg";
 import img2 from "../assets/images/catalogImages/2.jpeg";
@@ -61,6 +62,7 @@ export const images: Images = {
   imagesHeader2: imagesHeader2,
   imagesHeader3: imagesHeader3,
   parallax: parallaxImage,
+  header: header,
 };
 
 interface filterImages {

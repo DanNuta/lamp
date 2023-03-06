@@ -12,7 +12,7 @@ interface Props {
 
 export const ImageSliderItem = styled.div`
   position: relative;
-  height: 150px;
+  height: 400px;
 `;
 
 export const CardItem = styleMui(CardMedia)`
@@ -28,6 +28,7 @@ export const ImagesContainer = styled.div<Props>`
 
   img {
     transition: 0.3s ease-in-out;
+    object-fit: cover;
   }
 
   img:hover {
@@ -82,8 +83,6 @@ font-size: 14px;
 color: ${color.black};
 `;
 
-
-
 export const ParentCard = styleMui(Card)`
 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-`
+`;

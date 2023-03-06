@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Flex, DirectionRow, Center } from "../../Css/ReutilizableCss";
 import { theme } from "../../Css/BreakPoints";
+import { color } from "../../constants/color";
+
 interface Images {
   index: number;
   counter: number;
@@ -13,14 +15,21 @@ export const Image = styled.img`
 `;
 
 export const Paraghraph = styled.p`
-  ${theme.breakpoints.up("md")} {
-    font-size: 20px;
-  }
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  color: white;
 `;
 
 export const H1 = styled.h1`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+
   ${theme.breakpoints.up("md")} {
-    font-size: 56px;
+    font-size: 72px;
   }
 `;
 
@@ -54,18 +63,18 @@ export const ContainerText = styled.div`
   })};
   width: 80%;
   margin: auto;
-  color: black;
+  color: white;
 
   ${theme.breakpoints.up("md")} {
-    width: 40%;
+    width: 60%;
     ${Flex({
-      gap: "35px",
+      gap: "150px",
     })};
   }
 `;
 
 export const ImagesContainerText = styled.div`
-  background-color: rgba(255, 255, 255, 0.3);
+  //background-color: rgba(255, 255, 255, 0.3);
   position: absolute;
   top: 0;
   bottom: 0;

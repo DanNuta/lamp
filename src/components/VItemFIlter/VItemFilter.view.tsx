@@ -3,11 +3,10 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { CardActions } from "@mui/material";
 import { VDots } from "../";
 import { PropsFilterItem } from "./type";
-
+import { AHref } from "../../Css/ElementSame";
 
 export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
   return (
@@ -39,7 +38,9 @@ export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
       </CardContent>
 
       <CardActions>
-        <Style.AHref href="#Galery">More info</Style.AHref>
+        <AHref padding="13px 15px" href="#Galery">
+          More info
+        </AHref>
       </CardActions>
     </Style.ParentCard>
   );

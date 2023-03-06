@@ -8,8 +8,6 @@ import { TitleSection, Btn } from "../../Css/ElementSame";
 
 export const ContactView: React.FC<PropsView> = (props) => {
   return (
-
-
     <Style.ContainerStyle id="Contact">
       <TitleSection>Form</TitleSection>
 
@@ -54,9 +52,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
           value={props.message}
         />
 
-        <Btn onClick={props.submit} >Contact</Btn>
-
-
+        <Btn onClick={props.submit}>Contact</Btn>
       </Style.Form>
     </Style.ContainerStyle>
   );
