@@ -17,7 +17,6 @@ export const MapView: React.FC = () => {
   useEffect(() => {
     const map = L.map(mapRef.current).setView([47.695, 28.9], 13);
 
-    // Adaugă o imagine de fundal pentru hartă
     L.tileLayer.provider("CartoDB.Positron").addTo(map); // Aici se schimba stilul hartii cu "BasemapAT.grau"
     L.marker([47.695, 28.9])
       .addTo(map)

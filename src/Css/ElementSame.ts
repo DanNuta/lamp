@@ -90,3 +90,17 @@ export const AHref = styled.a<Props>`
     background-color: ${color.white_gray};
   }
 `;
+
+
+export const ParagraphSection = styleddMui(Typography)(({theme}) => ({
+  fontFamily: 'Montserrat',
+  fontStyle: "normal",
+  fontWeight: 700,
+  fontSize: "24px",
+  color: `${color.black}`,
+
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "24px",
+
+  }
+}));

@@ -7,6 +7,7 @@ import { VDots } from "./VDots/VDots";
 import { VFilterBtn } from "./VFilterBtn/VFilterBtn";
 import { VCountryNumber } from "./VCountryNumber/VCountryNumber";
 import { Testimonial } from "./VTestimonial/VTestimonial";
+import { VSocialMedia } from "./VSocialMedia/VSocialMedia";
 
 export {
   Burgher,
@@ -19,4 +20,6 @@ export {
   VFilterBtn,
   Testimonial,
   VCountryNumber,
+  VSocialMedia
+
 };
