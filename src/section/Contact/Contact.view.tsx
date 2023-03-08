@@ -4,8 +4,12 @@ import TextField from "@mui/material/TextField";
 import { PropsView } from "./type";
 import { VSocialMedia } from "../../components";
 import { TitleSection, Btn, ParagraphSection } from "../../Css/ElementSame";
+import { useEffect, useRef } from "react";
 
 export const ContactView: React.FC<PropsView> = (props) => {
+
+  const form = useRef<HTMLFormElement>(null);
+
   return (
     <Style.ContainerStyle id="Contact">
       <TitleSection>Form</TitleSection>
@@ -32,9 +36,10 @@ export const ContactView: React.FC<PropsView> = (props) => {
         </Grid>
 
         <Grid xs={12} sm={5} item>
-          <Style.Form onSubmit={(e) => props.submit(e)} autoComplete="off">
+          <Style.Form ref={form} onSubmit={(e) => props.submit(e, form)} autoComplete="off">
             <Style.TextFieldStyle
               value={props.nume}
+              name="nume"
               id="standard-basic"
               label="Nume"
               variant="standard"
@@ -44,6 +49,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
 
             <TextField
               value={props.email}
+              name="email"
               required
               helperText={props.error_email}
               error={props.error_email === "" ? false : true}
@@ -56,6 +62,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
 
             <Style.NumberInputField
               required
+              name="telefon"
               value={props.telefon}
               error={props.error_telefon === "" ? false : true}
               id="outlined-error"
@@ -69,6 +76,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
 
             <TextField
               id="standard-basic"
+              name="message"
               label="Mesaj"
               variant="standard"
               type="text"
@@ -78,7 +86,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
               value={props.message}
             />
 
-            <Btn>Contact</Btn>
+            <Btn type="submit">{props.pending ? "Sending" : "Contact"}</Btn>
           </Style.Form>
         </Grid>
       </Grid>

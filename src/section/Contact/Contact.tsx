@@ -13,6 +13,8 @@ export const Contact: React.FC = () => {
 
     error_email: "",
     error_telefon: "",
+
+    pending: false
   };
 
   function reducerFn(state: StateProps, action: Action): StateProps {
@@ -38,6 +40,12 @@ export const Contact: React.FC = () => {
       case Type.ERROR_TELEFON:
         return { ...state, error_telefon: payload };
         break;
+      case Type.SEND_DATA: 
+        return {...state, pending: true} 
+       break;
+       case Type.RECEIVE_DATA: 
+        return {...state, pending: false} 
+       break;
       default:
         return { ...state };
     }
@@ -76,48 +84,60 @@ export const Contact: React.FC = () => {
     dispach({ type: Type.MESSAGE, payload: value });
   }
 
-  function submitData(e: any) {
-    console.log(e);
+  function submitData(e: React.FormEvent<HTMLFormElement>, form: React.RefObject<HTMLFormElement>) {
+    e.preventDefault()
+    
+    
 
-    // if (!pattern.email.test(state.email) && state.telefon === "") {
-    //   dispach({
-    //     type: Type.ERROR_TELEFON,
-    //     payload: "Trebuie sa introduci in numar de telefon",
-    //   });
+    if (!pattern.email.test(state.email) && state.telefon === "") {
+      dispach({
+        type: Type.ERROR_TELEFON,
+        payload: "Trebuie sa introduci in numar de telefon",
+      });
 
-    //   dispach({
-    //     type: Type.ERROR_EMAIL,
-    //     payload: "Acest email nu este valid",
-    //   });
-    // }
+      dispach({
+        type: Type.ERROR_EMAIL,
+        payload: "Acest email nu este valid",
+      });
+    }
 
-    // if (!pattern.email.test(state.email)) {
-    //   dispach({
-    //     type: Type.ERROR_EMAIL,
-    //     payload: "Acest email nu este valid",
-    //   });
-    // } else if (state.telefon === "") {
-    //   dispach({
-    //     type: Type.ERROR_TELEFON,
-    //     payload: "Trebuie sa introduci in numar de telefon",
-    //   });
-    // } else {
-    //   dispach({ type: Type.EMAIL, payload: "" });
-    //   dispach({ type: Type.MESSAGE, payload: "" });
-    //   dispach({ type: Type.NUME, payload: "" });
-    //   dispach({ type: Type.TELEFON, payload: "" });
-    //   dispach({ type: Type.ERROR_TELEFON, payload: "" });
-    //   dispach({ type: Type.ERROR_EMAIL, payload: "" });
+    if (!pattern.email.test(state.email)) {
+      dispach({
+        type: Type.ERROR_EMAIL,
+        payload: "Acest email nu este valid",
+      });
+    } else if (state.telefon === "") {
+      dispach({
+        type: Type.ERROR_TELEFON,
+        payload: "Trebuie sa introduci in numar de telefon",
+      });
+    } else {
+      dispach({ type: Type.EMAIL, payload: "" });
+      dispach({ type: Type.MESSAGE, payload: "" });
+      dispach({ type: Type.NUME, payload: "" });
+      dispach({ type: Type.TELEFON, payload: "" });
+      dispach({ type: Type.ERROR_TELEFON, payload: "" });
+      dispach({ type: Type.ERROR_EMAIL, payload: "" });
 
-    //   emailjs.sendForm("service_lamp", "template_8o8dmsa", "#myForm").then(
-    //     function (response) {
-    //       console.log("SUCCESS!", response.status, response.text);
-    //     },
-    //     function (error) {
-    //       console.log("FAILED...", error);
-    //     }
-    //   );
-    // }
+      dispach({type: Type.SEND_DATA, payload: ""})
+      emailjs.sendForm("service_slnsoi6","template_8o8dmsa", form.current!, "user_HhwPsdYuSdseFT3DDVWkC").
+      then(
+        function (response) {
+          dispach({type: Type.RECEIVE_DATA, payload: ""})
+          console.log("SUCCESS!", response.status, response.text);
+
+          if(response.status === 200 && response.text == "ok"){
+            r 
+0.36
++--          }
+
+          console.log(response)
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+    }
   }
 
   return (
@@ -126,6 +146,7 @@ export const Contact: React.FC = () => {
       emailFn={emailFn}
       telefonFn={telefonFn}
       messageFn={messageFn}
+      pending={state.pending}
       nume={state.nume}
       email={state.email}
       telefon={state.telefon}

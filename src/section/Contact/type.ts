@@ -14,6 +14,8 @@ export interface StateProps {
 
   error_email: string;
   error_telefon: string;
+
+  pending: boolean
 }
 
 export interface PropsView extends StateProps {
@@ -29,7 +31,7 @@ export interface PropsView extends StateProps {
   messageFn: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
-  submit: (e: any) => void;
+  submit: (e: React.FormEvent<HTMLFormElement>, form: React.RefObject<HTMLFormElement>) => void;
 }
 
 export enum Type {
@@ -40,6 +42,10 @@ export enum Type {
 
   ERROR_EMAIL = "ERROR_EMAIL",
   ERROR_TELEFON = "ERROR_TELEFON",
+
+  SEND_DATA = "SEND_DATA",
+  RECEIVE_DATA = "RECEIVE_DATA"
+
 }
 
 export interface Action {
