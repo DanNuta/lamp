@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { DirectionRow, Flex } from "../../Css/ReutilizableCss";
 import Button from "@mui/material/Button";
 import { styled as styleMui } from "@mui/material/styles";
-import { Container } from "@mui/system";
+import { Box, Container } from "@mui/system";
 import TextField from "@mui/material/TextField";
 
 export const TextFieldStyle = styleMui(TextField)(() => ({
@@ -38,4 +38,11 @@ export const H1 = styled.h1``;
 
 export const ButtonForm = styleMui(Button)`
 border-radius: 100px;
+`;
+
+export const ContactContainerStyle = styleMui(Box)`
+
+display: flex;
+alignItems: center;
+
 `;

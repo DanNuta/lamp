@@ -20,6 +20,5 @@ export {
   VFilterBtn,
   Testimonial,
   VCountryNumber,
-  VSocialMedia
-
+  VSocialMedia,
 };

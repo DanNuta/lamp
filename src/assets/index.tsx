@@ -37,8 +37,7 @@ import img18 from "../assets/images/catalogImages/18.jpeg";
 
 import parallaxImage from "../assets/images/paralexEffect.jpg";
 
-
-import {socialMedia} from "../assets/icons/SocialMedia/socialMedia";
+import { socialMedia } from "../assets/icons/SocialMedia/socialMedia";
 
 interface Icon {
   [key: string]: React.ReactNode;
@@ -104,4 +103,3 @@ export const imagesGalery = [
 ];
 
 export { Logo, socialMedia };
-

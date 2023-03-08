@@ -38,6 +38,7 @@ export const Btn = styleddMui(Button)(({ theme }) => ({
   border: `1px solid transparent`,
   borderRadius: "0px",
 
+
   "&:hover": {
     backgroundColor: "white",
     color: `${color.black}`,
@@ -91,9 +92,8 @@ export const AHref = styled.a<Props>`
   }
 `;
 
-
-export const ParagraphSection = styleddMui(Typography)(({theme}) => ({
-  fontFamily: 'Montserrat',
+export const ParagraphSection = styleddMui(Typography)(({ theme }) => ({
+  fontFamily: "Montserrat",
   fontStyle: "normal",
   fontWeight: 700,
   fontSize: "24px",
@@ -101,6 +101,5 @@ export const ParagraphSection = styleddMui(Typography)(({theme}) => ({
 
   [theme.breakpoints.up("sm")]: {
     fontSize: "24px",
-
-  }
+  },
 }));
