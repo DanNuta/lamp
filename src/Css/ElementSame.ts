@@ -38,7 +38,6 @@ export const Btn = styleddMui(Button)(({ theme }) => ({
   border: `1px solid transparent`,
   borderRadius: "0px",
 
-
   "&:hover": {
     backgroundColor: "white",
     color: `${color.black}`,

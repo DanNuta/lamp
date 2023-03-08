@@ -1,3 +1,4 @@
+import React from "react";
 export interface PropsData {
   flags: string;
   iddRoot: number;
@@ -16,8 +17,6 @@ export interface StateProps {
 }
 
 export interface PropsView extends StateProps {
-  country?: PropsData[];
-  searchCountry: (data: string) => void;
   numeFn: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
@@ -30,7 +29,7 @@ export interface PropsView extends StateProps {
   messageFn: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
-  submit: () => void;
+  submit: (e: any) => void;
 }
 
 export enum Type {

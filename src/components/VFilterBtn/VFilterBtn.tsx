@@ -7,7 +7,7 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 
 interface PropsStyle {
-  colorText: string;
+  colorText?: string;
   bg: string;
   border: string;
 }

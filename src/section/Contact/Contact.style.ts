@@ -41,8 +41,15 @@ border-radius: 100px;
 `;
 
 export const ContactContainerStyle = styleMui(Box)`
-
 display: flex;
 alignItems: center;
-
 `;
+
+export const NumberInputField = styleMui(TextField)(({ theme }) => ({
+  "& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button": {
+    display: "none",
+  },
+  "& input[type=number]": {
+    MozAppearance: "textfield",
+  },
+}));

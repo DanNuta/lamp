@@ -1,21 +1,10 @@
 import { ContactView } from "./Contact.view";
-import { useFetchCountry } from "../../hooks/useFetchCountry";
 import { PropsData, Type, Action, StateProps } from "./type";
 import React, { useReducer } from "react";
 import { pattern } from "./regEx";
 import emailjs from "emailjs-com";
 
 export const Contact: React.FC = () => {
-  const { country } = useFetchCountry("https://restcountries.com/v3.1/all");
-
-  const [countryState, setCountryState] = React.useState<PropsData[]>(country);
-
-  React.useEffect(() => {
-    setCountryState((prev) => {
-      return (prev = country);
-    });
-  }, [country]);
-
   const defaultState: StateProps = {
     nume: "",
     email: "",
@@ -56,27 +45,6 @@ export const Contact: React.FC = () => {
 
   const [state, dispach] = useReducer(reducerFn, defaultState);
 
-  function searchCountry(value: string) {
-    const localCountry = localStorage.getItem("country");
-
-    if (localCountry) {
-      const data: PropsData[] = JSON.parse(localCountry);
-      const newArray = data.filter((item) =>
-        item.nameCountry.toLowerCase().includes(value.toLowerCase())
-      );
-
-      if (value === "" || newArray.length === 0) {
-        setCountryState((prev) => {
-          return (prev = data);
-        });
-      } else {
-        setCountryState((prev) => {
-          return (prev = newArray);
-        });
-      }
-    }
-  }
-
   function numeFn(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
@@ -108,52 +76,52 @@ export const Contact: React.FC = () => {
     dispach({ type: Type.MESSAGE, payload: value });
   }
 
-  function submitData() {
-    if (!pattern.email.test(state.email) && state.telefon === "") {
-      dispach({
-        type: Type.ERROR_TELEFON,
-        payload: "Trebuie sa introduci in numar de telefon",
-      });
+  function submitData(e: any) {
+    console.log(e);
 
-      dispach({
-        type: Type.ERROR_EMAIL,
-        payload: "Acest email nu este valid",
-      });
-    }
+    // if (!pattern.email.test(state.email) && state.telefon === "") {
+    //   dispach({
+    //     type: Type.ERROR_TELEFON,
+    //     payload: "Trebuie sa introduci in numar de telefon",
+    //   });
 
-    if (!pattern.email.test(state.email)) {
-      dispach({
-        type: Type.ERROR_EMAIL,
-        payload: "Acest email nu este valid",
-      });
-    } else if (state.telefon === "") {
-      dispach({
-        type: Type.ERROR_TELEFON,
-        payload: "Trebuie sa introduci in numar de telefon",
-      });
-    } else {
-      dispach({ type: Type.EMAIL, payload: "" });
-      dispach({ type: Type.MESSAGE, payload: "" });
-      dispach({ type: Type.NUME, payload: "" });
-      dispach({ type: Type.TELEFON, payload: "" });
-      dispach({ type: Type.ERROR_TELEFON, payload: "" });
-      dispach({ type: Type.ERROR_EMAIL, payload: "" });
+    //   dispach({
+    //     type: Type.ERROR_EMAIL,
+    //     payload: "Acest email nu este valid",
+    //   });
+    // }
 
-      emailjs.sendForm("service_lamp", "template_8o8dmsa", "#myForm").then(
-        function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        function (error) {
-          console.log("FAILED...", error);
-        }
-      );
-    }
+    // if (!pattern.email.test(state.email)) {
+    //   dispach({
+    //     type: Type.ERROR_EMAIL,
+    //     payload: "Acest email nu este valid",
+    //   });
+    // } else if (state.telefon === "") {
+    //   dispach({
+    //     type: Type.ERROR_TELEFON,
+    //     payload: "Trebuie sa introduci in numar de telefon",
+    //   });
+    // } else {
+    //   dispach({ type: Type.EMAIL, payload: "" });
+    //   dispach({ type: Type.MESSAGE, payload: "" });
+    //   dispach({ type: Type.NUME, payload: "" });
+    //   dispach({ type: Type.TELEFON, payload: "" });
+    //   dispach({ type: Type.ERROR_TELEFON, payload: "" });
+    //   dispach({ type: Type.ERROR_EMAIL, payload: "" });
+
+    //   emailjs.sendForm("service_lamp", "template_8o8dmsa", "#myForm").then(
+    //     function (response) {
+    //       console.log("SUCCESS!", response.status, response.text);
+    //     },
+    //     function (error) {
+    //       console.log("FAILED...", error);
+    //     }
+    //   );
+    // }
   }
 
   return (
     <ContactView
-      country={countryState}
-      searchCountry={searchCountry}
       numeFn={numeFn}
       emailFn={emailFn}
       telefonFn={telefonFn}
