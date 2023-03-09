@@ -3,8 +3,10 @@ import { PropsData, Type, Action, StateProps } from "./type";
 import React, { useReducer } from "react";
 import { pattern } from "./regEx";
 import emailjs from "emailjs-com";
+import {text} from "../../TextContent/text";
 
 export const Contact: React.FC = () => {
+
   const defaultState: StateProps = {
     nume: "",
     email: "",
@@ -14,7 +16,9 @@ export const Contact: React.FC = () => {
     error_email: "",
     error_telefon: "",
 
-    pending: false
+    pending: false,
+
+    validityMessage: ""
   };
 
   function reducerFn(state: StateProps, action: Action): StateProps {
@@ -40,12 +44,15 @@ export const Contact: React.FC = () => {
       case Type.ERROR_TELEFON:
         return { ...state, error_telefon: payload };
         break;
-      case Type.SEND_DATA: 
-        return {...state, pending: true} 
-       break;
-       case Type.RECEIVE_DATA: 
-        return {...state, pending: false} 
-       break;
+      case Type.SEND_DATA:
+        return { ...state, pending: true };
+        break;
+      // case Type.RECEIVE_DATA:
+      //   return { ...state, pending: false };
+      //   break;
+      case Type.VALIDITY:
+          return { ...state, pending: false, validityMessage: payload };
+          break;
       default:
         return { ...state };
     }
@@ -84,10 +91,11 @@ export const Contact: React.FC = () => {
     dispach({ type: Type.MESSAGE, payload: value });
   }
 
-  function submitData(e: React.FormEvent<HTMLFormElement>, form: React.RefObject<HTMLFormElement>) {
-    e.preventDefault()
-    
-    
+  function submitData(
+    e: React.FormEvent<HTMLFormElement>,
+    form: React.RefObject<HTMLFormElement>
+  ) {
+    e.preventDefault();
 
     if (!pattern.email.test(state.email) && state.telefon === "") {
       dispach({
@@ -119,24 +127,30 @@ export const Contact: React.FC = () => {
       dispach({ type: Type.ERROR_TELEFON, payload: "" });
       dispach({ type: Type.ERROR_EMAIL, payload: "" });
 
-      dispach({type: Type.SEND_DATA, payload: ""})
-      emailjs.sendForm("service_slnsoi6","template_8o8dmsa", form.current!, "user_HhwPsdYuSdseFT3DDVWkC").
-      then(
-        function (response) {
-          dispach({type: Type.RECEIVE_DATA, payload: ""})
-          console.log("SUCCESS!", response.status, response.text);
+      dispach({ type: Type.SEND_DATA, payload: "" });
 
-          if(response.status === 200 && response.text == "ok"){
-            r 
-0.36
-+--          }
+      emailjs
+        .sendForm(
+          "service_slnsoi6",
+          "template_8o8dmsa",
+          form.current!,
+          "user_HhwPsdYuSdseFT3DDVWkC"
+        )
+        .then(
+          function (response) {
+            //dispach({ type: Type.RECEIVE_DATA, payload: "" });
+            console.log("SUCCESS!", response.status, response.text);
 
-          console.log(response)
-        },
-        function (error) {
-          console.log("FAILED...", error);
-        }
-      );
+            if (response.status === 200 && response.text == "OK") {
+                  dispach({type: Type.VALIDITY, payload: `${text.validity_form}`})
+            }
+
+            console.log(response);
+          },
+          function (error) {
+            console.log("FAILED...", error);
+          }
+        );
     }
   }
 
@@ -146,6 +160,7 @@ export const Contact: React.FC = () => {
       emailFn={emailFn}
       telefonFn={telefonFn}
       messageFn={messageFn}
+      validityMessage={state.validityMessage}
       pending={state.pending}
       nume={state.nume}
       email={state.email}

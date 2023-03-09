@@ -5,14 +5,19 @@ import { PropsView } from "./type";
 import { VSocialMedia } from "../../components";
 import { TitleSection, Btn, ParagraphSection } from "../../Css/ElementSame";
 import { useEffect, useRef } from "react";
+import Alert from '@mui/material/Alert';
 
 export const ContactView: React.FC<PropsView> = (props) => {
 
-  const form = useRef<HTMLFormElement>(null);
+  console.log(props.validityMessage)
 
+
+  const form = useRef<HTMLFormElement>(null);
   return (
     <Style.ContainerStyle id="Contact">
       <TitleSection>Form</TitleSection>
+
+      <Alert variant="outlined" severity="success">{props.validityMessage}</Alert>
 
       <Grid container>
         <Grid sm={8} item>
@@ -36,7 +41,11 @@ export const ContactView: React.FC<PropsView> = (props) => {
         </Grid>
 
         <Grid xs={12} sm={5} item>
-          <Style.Form ref={form} onSubmit={(e) => props.submit(e, form)} autoComplete="off">
+          <Style.Form
+            ref={form}
+            onSubmit={(e) => props.submit(e, form)}
+            autoComplete="off"
+          >
             <Style.TextFieldStyle
               value={props.nume}
               name="nume"
