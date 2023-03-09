@@ -17,7 +17,7 @@ export interface StateProps {
 
   pending: boolean;
 
-  validityMessage: string
+  validityMessage: string;
 }
 
 export interface PropsView extends StateProps {
@@ -51,7 +51,7 @@ export enum Type {
   SEND_DATA = "SEND_DATA",
   RECEIVE_DATA = "RECEIVE_DATA",
 
-  VALIDITY = "VALID_DATA"
+  VALIDITY = "VALID_DATA",
 }
 
 export interface Action {

@@ -9,7 +9,6 @@ import { theme } from "../../Css/BreakPoints";
 import styled, { keyframes } from "styled-components";
 import { Container } from "../../components/MobileNavigation/MobileNavigation.style";
 
-
 export const H1 = styleMui(Typography)`
   font-style: italic;
   font-family: "Montserrat";

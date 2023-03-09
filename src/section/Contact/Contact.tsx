@@ -3,12 +3,9 @@ import { PropsData, Type, Action, StateProps } from "./type";
 import React, { useReducer, useEffect } from "react";
 import { pattern } from "./regEx";
 import emailjs from "emailjs-com";
-import {text} from "../../TextContent/text";
+import { text } from "../../TextContent/text";
 
 export const Contact: React.FC = () => {
-
-
-
   const defaultState: StateProps = {
     nume: "",
     email: "",
@@ -20,11 +17,8 @@ export const Contact: React.FC = () => {
 
     pending: false,
 
-    validityMessage: ""
+    validityMessage: "",
   };
-
-
-
 
   function reducerFn(state: StateProps, action: Action): StateProps {
     const { type, payload } = action;
@@ -56,8 +50,8 @@ export const Contact: React.FC = () => {
       //   return { ...state, pending: false };
       //   break;
       case Type.VALIDITY:
-          return { ...state, pending: false, validityMessage: payload };
-          break;
+        return { ...state, pending: false, validityMessage: payload };
+        break;
       default:
         return { ...state };
     }
@@ -65,15 +59,12 @@ export const Contact: React.FC = () => {
 
   const [state, dispach] = useReducer(reducerFn, defaultState);
 
-
   useEffect(() => {
-    console.log("sa")
-    setTimeout(function(){
-      dispach({type: Type.VALIDITY, payload: ""})
-    }, 2000)
-
-  }, [state.validityMessage])
-
+    console.log("sa");
+    setTimeout(function () {
+      dispach({ type: Type.VALIDITY, payload: "" });
+    }, 2000);
+  }, [state.validityMessage]);
 
   function numeFn(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -154,7 +145,10 @@ export const Contact: React.FC = () => {
         .then(
           function (response) {
             if (response.status === 200 && response.text == "OK") {
-                  dispach({type: Type.VALIDITY, payload: `${text.validity_form}`})
+              dispach({
+                type: Type.VALIDITY,
+                payload: `${text.validity_form}`,
+              });
             }
           },
           function (error) {

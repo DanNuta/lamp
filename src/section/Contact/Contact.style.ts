@@ -6,10 +6,7 @@ import { Box, Container } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import { Grid } from "@mui/material";
 
-
-
-export const GridItemIcon = styleMui(Grid)(({theme}) => ({
-
+export const GridItemIcon = styleMui(Grid)(({ theme }) => ({
   display: "flex",
   gap: "20px",
   flexDirection: "column",
@@ -18,11 +15,8 @@ export const GridItemIcon = styleMui(Grid)(({theme}) => ({
   [theme.breakpoints.up("sm")]: {
     justifyContent: "center",
     alignItems: "start",
-
-  }
-
-
-}))
+  },
+}));
 
 export const TextFieldStyle = styleMui(TextField)(() => ({
   fontFamily: "Montserrat",

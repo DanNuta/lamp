@@ -6,17 +6,19 @@ import { Container } from "@mui/material";
 
 export const SloganView: React.FC = () => {
   return (
-    <Container style={{display: "flex", 
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"}}>
-      
-        <FormatQuoteOutlinedIcon
-          style={{ color: `${color.black}`, fontSize: 70 }}
-        />
+    <Container
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <FormatQuoteOutlinedIcon
+        style={{ color: `${color.black}`, fontSize: 70 }}
+      />
 
-        <Style.H1>Lifting people’s quality of life with light</Style.H1>
-      
+      <Style.H1>Lifting people’s quality of life with light</Style.H1>
     </Container>
   );
 };

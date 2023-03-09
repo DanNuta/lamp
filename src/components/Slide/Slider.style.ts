@@ -97,10 +97,9 @@ export const AHref = styled.a`
   text-transform: uppercase;
   font-size: 14px;
 
-  ${theme.breakpoints.up("sm")}{
+  ${theme.breakpoints.up("sm")} {
     padding: 23px 54px;
   }
-  
 
   &:hover {
     border: 1px solid ${color.black};
@@ -110,6 +109,3 @@ export const AHref = styled.a`
     background-color: ${color.white_gray};
   }
 `;
-
-
-

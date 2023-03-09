@@ -5,20 +5,17 @@ import { PropsView } from "./type";
 import { VSocialMedia } from "../../components";
 import { TitleSection, Btn, ParagraphSection } from "../../Css/ElementSame";
 import { useEffect, useRef } from "react";
-import Alert from '@mui/material/Alert';
-import {text} from "../../TextContent/text";
+import Alert from "@mui/material/Alert";
+import { text } from "../../TextContent/text";
 
 export const ContactView: React.FC<PropsView> = (props) => {
-
-
   const form = useRef<HTMLFormElement>(null);
   return (
     <Style.ContainerStyle id="Contact">
       <TitleSection>Form</TitleSection>
 
-
       <Grid container>
-        <Grid style={{marginBlock: "50px"}} sm={8} item>
+        <Grid style={{ marginBlock: "50px" }} sm={8} item>
           <ParagraphSection>
             You can ask a question by writing to us in any of the social
             networks, or by filling out the form on the website:
@@ -27,11 +24,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
       </Grid>
 
       <Grid container>
-        <Style.GridItemIcon
-          xs={12}
-          sm={4}
-          item
-        >
+        <Style.GridItemIcon xs={12} sm={4} item>
           <ParagraphSection>{text.email}</ParagraphSection>
           <VSocialMedia />
         </Style.GridItemIcon>
@@ -92,8 +85,11 @@ export const ContactView: React.FC<PropsView> = (props) => {
             />
 
             <Btn type="submit">{props.pending ? "Sending" : "Contact"}</Btn>
-              {props.validityMessage && <Alert variant="outlined" severity="success">{props.validityMessage}</Alert>}
-
+            {props.validityMessage && (
+              <Alert variant="outlined" severity="success">
+                {props.validityMessage}
+              </Alert>
+            )}
           </Style.Form>
         </Grid>
       </Grid>

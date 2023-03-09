@@ -70,23 +70,21 @@ export const Paraghraph = styleddMui(Typography)`
 `;
 
 export const AHref = styled.a<Props>`
-padding: ${(props) => props.padding};
-font-family: "Montserrat";
-font-weight: 600;
-font-size: ${(props) => (props.fontSize ? props.fontSize : "12px")};
-color: white;
-border: 1px solid transparent;
-background-color: ${color.black};
-border-radius: 3px;
-transition: 0.2s ease-in-out;
-border-radius: 0;
-text-transform: uppercase;
-font-size: 14px;
+  padding: ${(props) => props.padding};
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "12px")};
+  color: white;
+  border: 1px solid transparent;
+  background-color: ${color.black};
+  border-radius: 3px;
+  transition: 0.2s ease-in-out;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: 14px;
 
-  ${theme.breakpoints.up("sm")}{
-    
+  ${theme.breakpoints.up("sm")} {
   }
-  
 
   &:hover {
     border: 1px solid ${color.black};
