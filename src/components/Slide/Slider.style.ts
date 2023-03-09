@@ -26,7 +26,7 @@ export const H1 = styled.h1`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  font-size: 34px;
+  font-size: 30px;
 
   ${theme.breakpoints.up("md")} {
     font-size: 72px;
@@ -68,13 +68,12 @@ export const ContainerText = styled.div`
   ${theme.breakpoints.up("md")} {
     width: 60%;
     ${Flex({
-      gap: "150px",
+      gap: "50px",
     })};
   }
 `;
 
 export const ImagesContainerText = styled.div`
-  //background-color: rgba(255, 255, 255, 0.3);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -85,11 +84,32 @@ export const ImagesContainerText = styled.div`
 `;
 
 export const AHref = styled.a`
-  outline: none;
-  padding: 10px 20px;
-  background-color: #212121;
+  padding: 19px 40px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: "34px";
   color: white;
-  border-radius: 100px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
+  border: 1px solid transparent;
+  background-color: ${color.black};
+  border-radius: 3px;
+  transition: 0.2s ease-in-out;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+
+  ${theme.breakpoints.up("sm")}{
+    padding: 23px 54px;
+  }
+  
+
+  &:hover {
+    border: 1px solid ${color.black};
+    background-color: white;
+    color: ${color.black};
+    transition: 0.2s ease-in-out;
+    background-color: ${color.white_gray};
+  }
 `;
+
+
+

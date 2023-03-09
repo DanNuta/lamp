@@ -1,6 +1,6 @@
 export interface SliderType {
   image: string;
-  description: string;
+  description?: string;
   title: string;
   index: number;
   lenght: number;

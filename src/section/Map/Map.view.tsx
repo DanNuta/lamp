@@ -17,7 +17,7 @@ export const MapView: React.FC = () => {
   useEffect(() => {
     const map = L.map(mapRef.current).setView([47.695, 28.9], 13);
 
-    L.tileLayer.provider("CartoDB.Positron").addTo(map); // Aici se schimba stilul hartii cu "BasemapAT.grau"
+    L.tileLayer.provider("OpenStreetMap.Mapnik").addTo(map); // Aici se schimba stilul hartii cu "BasemapAT.grau"
     L.marker([47.695, 28.9])
       .addTo(map)
       .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")

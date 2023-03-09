@@ -1,11 +1,13 @@
 import { ContactView } from "./Contact.view";
 import { PropsData, Type, Action, StateProps } from "./type";
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import { pattern } from "./regEx";
 import emailjs from "emailjs-com";
 import {text} from "../../TextContent/text";
 
 export const Contact: React.FC = () => {
+
+
 
   const defaultState: StateProps = {
     nume: "",
@@ -20,6 +22,9 @@ export const Contact: React.FC = () => {
 
     validityMessage: ""
   };
+
+
+
 
   function reducerFn(state: StateProps, action: Action): StateProps {
     const { type, payload } = action;
@@ -59,6 +64,16 @@ export const Contact: React.FC = () => {
   }
 
   const [state, dispach] = useReducer(reducerFn, defaultState);
+
+
+  useEffect(() => {
+    console.log("sa")
+    setTimeout(function(){
+      dispach({type: Type.VALIDITY, payload: ""})
+    }, 2000)
+
+  }, [state.validityMessage])
+
 
   function numeFn(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -138,14 +153,9 @@ export const Contact: React.FC = () => {
         )
         .then(
           function (response) {
-            //dispach({ type: Type.RECEIVE_DATA, payload: "" });
-            console.log("SUCCESS!", response.status, response.text);
-
             if (response.status === 200 && response.text == "OK") {
                   dispach({type: Type.VALIDITY, payload: `${text.validity_form}`})
             }
-
-            console.log(response);
           },
           function (error) {
             console.log("FAILED...", error);
