@@ -1,6 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { createRoot } from "react-dom/client";
+import { RootFooter } from "./layouts/RootFooter/RootFooter";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -50,6 +51,7 @@ function App() {
       <GlobalStyle />
       <RouterProvider router={router} />
       <HomePage />
+      <RootFooter />
     </ThemeProvider>
   );
 }
