@@ -15,21 +15,21 @@ export const ContactView: React.FC<PropsView> = (props) => {
       <TitleSection>Form</TitleSection>
 
       <Grid container>
-        <Grid style={{ marginBlock: "50px" }} sm={8} item>
-          <ParagraphSection>
+        <Style.FormMessage style={{ marginBlock: "50px" }} xs={12} sm={8} item>
+          <Style.TitleMessageForm>
             You can ask a question by writing to us in any of the social
             networks, or by filling out the form on the website:
-          </ParagraphSection>
-        </Grid>
+          </Style.TitleMessageForm>
+        </Style.FormMessage>
       </Grid>
 
       <Grid container>
-        <Style.GridItemIcon xs={12} sm={4} item>
+        <Style.GridItemIcon xs={12} sm={6} md={4} item>
           <ParagraphSection>{text.email}</ParagraphSection>
           <VSocialMedia />
         </Style.GridItemIcon>
 
-        <Grid xs={12} sm={5} item>
+        <Grid xs={12} sm={6} md={6} item>
           <Style.Form
             ref={form}
             onSubmit={(e) => props.submit(e, form)}
