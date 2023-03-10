@@ -13,3 +13,10 @@ export const footerContentText: FooterProps = {
   location: "Chișinău, str. Alba-Iulia 190/1",
   telefon: "+373 787 53 333",
 };
+
+
+export const AboutText = {
+  text: ""
+}
+
+

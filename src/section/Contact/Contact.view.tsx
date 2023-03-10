@@ -6,7 +6,7 @@ import { VSocialMedia } from "../../components";
 import { TitleSection, Btn, ParagraphSection } from "../../Css/ElementSame";
 import { useEffect, useRef } from "react";
 import Alert from "@mui/material/Alert";
-import { text } from "../../TextContent/text";
+import { text, footerContentText } from "../../TextContent/text";
 
 export const ContactView: React.FC<PropsView> = (props) => {
   const form = useRef<HTMLFormElement>(null);
@@ -25,7 +25,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
 
       <Grid container>
         <Style.GridItemIcon xs={12} sm={6} md={4} item>
-          <ParagraphSection>{text.email}</ParagraphSection>
+          <ParagraphSection>{footerContentText.email}</ParagraphSection>
           <VSocialMedia />
         </Style.GridItemIcon>
 
