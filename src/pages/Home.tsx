@@ -17,7 +17,7 @@ export const HomePage: React.FC = () => {
       <Filter />
       <SloganView />
       <Galery />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <MapView />
       <Contact />
     </>

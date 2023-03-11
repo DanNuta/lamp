@@ -14,9 +14,6 @@ export const footerContentText: FooterProps = {
   telefon: "+373 787 53 333",
 };
 
-
 export const AboutText = {
-  text: ""
-}
-
-
+  text: "",
+};
