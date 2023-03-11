@@ -12,7 +12,7 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
-const link = ["Home", "About", "Catalog", "Galery", "Testinomial", "Contact"];
+const link = ["Home", "About", "Catalog", "Galery", "Contact"];
 
 const date = new Date().getFullYear();
 

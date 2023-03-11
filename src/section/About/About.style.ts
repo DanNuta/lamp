@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Flex } from "../../Css/ReutilizableCss";
+import { DirectionRow, Flex } from "../../Css/ReutilizableCss";
 import { theme } from "../../Css/BreakPoints";
 import { styled as styleMui } from "@mui/material/styles";
 import { Container } from "@mui/system";
@@ -22,11 +22,16 @@ export const ContainerStyle = styleMui(Container)(({ theme }) => ({
 export const ContainerElement = styled.div`
   text-align: center;
   margin-top: 30px;
+  ${Flex({
+    gap: "30px",
+    flexDirection: DirectionRow.colunm,
+  })};
+
   ${theme.breakpoints.up("sm")} {
     ${Flex({
       gap: "30px",
+      flexDirection: DirectionRow.row,
     })};
-
     margin-top: 50px;
   }
 `;

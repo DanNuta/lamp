@@ -8,7 +8,7 @@ import { icons } from "../../assets";
 import React from "react";
 import { MobileNavigation } from "../../components/";
 
-const link = ["Home", "About", "Catalog", "Galery", "Testinomial", "Contact"];
+const link = ["Home", "About", "Catalog", "Galery", "Contact"];
 
 export const RootNav: React.FC = () => {
   const [burgher, setBurgher] = React.useState<boolean>(false);

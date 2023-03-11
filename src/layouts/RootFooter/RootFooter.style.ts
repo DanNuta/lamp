@@ -114,7 +114,7 @@ export const SocialMediaGrid = styleMui(Grid)(({ theme }) => ({
 }));
 
 export const FooterElement = styled.div`
-  background-color: ${color.white_gray};
+  background-color: ${color.footer_color};
 `;
 
 export const FooterParaghraph = styleMui(Typography)(({ theme }) => ({
@@ -125,6 +125,7 @@ export const FooterParaghraph = styleMui(Typography)(({ theme }) => ({
   fontSize: "14px",
   padding: "24px 47px",
   marginTop: "40px",
+  color: "white",
 
   [theme.breakpoints.up("sm")]: {
     padding: "20px 0",

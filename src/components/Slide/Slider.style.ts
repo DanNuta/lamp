@@ -88,9 +88,9 @@ export const AHref = styled.a`
   font-family: "Montserrat";
   font-weight: 600;
   font-size: "34px";
-  color: white;
+  color: ${color.bg_color};
   border: 1px solid transparent;
-  background-color: ${color.black};
+  background-color: transparent;
   border-radius: 3px;
   transition: 0.2s ease-in-out;
   border-radius: 0;

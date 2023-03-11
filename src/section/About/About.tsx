@@ -16,9 +16,9 @@ export const About: React.FC = () => {
   }
 
   return (
-    <>
+    <div id="About">
       {readMore && (
-        <Style.ContainerStyle id="About">
+        <Style.ContainerStyle>
           <TitleSection>About</TitleSection>
 
           <Style.ContainerElement>
@@ -58,6 +58,6 @@ export const About: React.FC = () => {
           {readMore ? "Hide about section" : "Show about section"}
         </Btn>
       </Style.CenterBtn>
-    </>
+    </div>
   );
 };
