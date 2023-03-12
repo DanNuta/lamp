@@ -6,10 +6,26 @@ import { GaleryType } from "./type";
 import { icons } from "../../assets";
 import { TitleSection, Btn } from "../../Css/ElementSame";
 
+import React, { useContext } from "react";
+import { TranslatorContext } from "../../Context/Translator.context";
+import { Props } from "../../Context/type";
+
+interface PropsGalery {
+  title: string;
+  btn: string[];
+}
+
 export const GaleryView: React.FC<GaleryType> = (props) => {
+  const { translator } = useContext(TranslatorContext) as Props;
+
+  const translationText = {
+    title: translator.galery.title,
+    btn: translator.galery.btn,
+  };
+
   return (
     <Style.ContainerStyle id="Galery">
-      <TitleSection>Galery</TitleSection>
+      <TitleSection>{translationText.title}</TitleSection>
 
       {props.data.img && (
         <Style.ContainerImages onClick={props.closeShowItem}>
@@ -45,8 +61,8 @@ export const GaleryView: React.FC<GaleryType> = (props) => {
         <Style.ContainerBtn>
           <Btn onClick={props.showMoreItems}>
             {props.images.length === imagesGalery.length
-              ? "Show Less"
-              : "Show More"}
+              ? `${translationText.btn[1]}`
+              : `${translationText.btn[0]}`}
           </Btn>
         </Style.ContainerBtn>
       </Style.ContainerParent>

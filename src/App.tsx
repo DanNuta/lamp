@@ -15,6 +15,8 @@ import { makeStyles } from "@mui/material/styles";
 import { GlobalStyle } from "./Css/GlobalStyle";
 import { HomePage } from "./pages/Home";
 
+import { TranslatorContextProvider } from "./Context/Translator.context";
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -48,10 +50,12 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <RouterProvider router={router} />
-      <HomePage />
-      <RootFooter />
+      <TranslatorContextProvider>
+        <GlobalStyle />
+        <RouterProvider router={router} />
+        <HomePage />
+        <RootFooter />
+      </TranslatorContextProvider>
     </ThemeProvider>
   );
 }

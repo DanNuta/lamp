@@ -4,7 +4,8 @@ import { theme } from "../../Css/BreakPoints";
 import { color } from "../../constants/color";
 
 interface Props {
-  state: boolean;
+  state?: boolean;
+  active?: boolean;
 }
 
 export const Container = styled.div``;
@@ -76,4 +77,11 @@ export const MobileContainer = styled.div<Props>``;
 export const Logo = styled.img`
   width: 100%;
   height: 100%;
+`;
+
+export const span = styled.span<Props>`
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: ${(props) => (props.active ? "bold" : "400")};
+  font-size: 14px;
 `;

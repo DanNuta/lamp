@@ -8,23 +8,59 @@ import { useEffect, useRef } from "react";
 import Alert from "@mui/material/Alert";
 import { text, footerContentText } from "../../TextContent/text";
 
+import React, { useContext } from "react";
+import { TranslatorContext } from "../../Context/Translator.context";
+import { Props } from "../../Context/type";
+
+interface ContactProps {
+  title: string;
+  desc: string;
+  form: {
+    name: string;
+    email: string;
+    tel: string;
+    message: string;
+    err_email: string;
+    err_tel: string;
+  };
+  btn: string[];
+  validity: string;
+}
+
 export const ContactView: React.FC<PropsView> = (props) => {
+  const { translator } = useContext(TranslatorContext) as Props;
+
+  const transText = translator.form;
+
+  const translatorText: ContactProps = {
+    title: transText.title,
+    desc: transText.desc,
+    form: {
+      name: transText.form.name,
+      email: transText.form.email,
+      tel: transText.form.tel,
+      message: transText.form.message,
+      err_email: transText.form.err_email,
+      err_tel: transText.form.err_tel,
+    },
+    btn: transText.btn,
+    validity: transText.validity,
+  };
+
   const form = useRef<HTMLFormElement>(null);
+
   return (
     <Style.ContainerStyle id="Contact">
-      <TitleSection>Form</TitleSection>
+      <TitleSection>{translatorText.title}</TitleSection>
 
       <Grid container>
         <Style.FormMessage style={{ marginBlock: "50px" }} xs={12} sm={8} item>
-          <Style.TitleMessageForm>
-            You can ask a question by writing to us in any of the social
-            networks, or by filling out the form on the website:
-          </Style.TitleMessageForm>
+          <Style.TitleMessageForm>{translatorText.desc}</Style.TitleMessageForm>
         </Style.FormMessage>
       </Grid>
 
       <Grid container>
-        <Style.GridItemIcon xs={12} sm={6} md={4} item>
+        <Style.GridItemIcon xs={12} sm={6} md={6} item>
           <ParagraphSection>{footerContentText.email}</ParagraphSection>
           <VSocialMedia />
         </Style.GridItemIcon>
@@ -39,7 +75,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
               value={props.nume}
               name="nume"
               id="standard-basic"
-              label="Nume"
+              label={`${translatorText.form.name}`}
               variant="standard"
               type="text"
               onChange={(e) => props.numeFn(e)}
@@ -52,7 +88,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
               helperText={props.error_email}
               error={props.error_email === "" ? false : true}
               id="standard-basic"
-              label="Email"
+              label={`${translatorText.form.email}`}
               variant="standard"
               type="text"
               onChange={(e) => props.emailFn(e)}
@@ -64,7 +100,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
               value={props.telefon}
               error={props.error_telefon === "" ? false : true}
               id="outlined-error"
-              label="Telephone"
+              label={`${translatorText.form.tel}`}
               variant="standard"
               type="number"
               fullWidth
@@ -75,7 +111,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
             <TextField
               id="standard-basic"
               name="message"
-              label="Mesaj"
+              label={`${translatorText.form.message}`}
               variant="standard"
               type="text"
               multiline
@@ -84,10 +120,14 @@ export const ContactView: React.FC<PropsView> = (props) => {
               value={props.message}
             />
 
-            <Btn type="submit">{props.pending ? "Sending" : "Contact"}</Btn>
+            <Btn type="submit">
+              {props.pending
+                ? `${translatorText.btn[1]}`
+                : `${translatorText.btn[0]}`}
+            </Btn>
             {props.validityMessage && (
               <Alert variant="outlined" severity="success">
-                {props.validityMessage}
+                {translatorText.validity}
               </Alert>
             )}
           </Style.Form>

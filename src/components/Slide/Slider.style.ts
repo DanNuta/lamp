@@ -83,12 +83,27 @@ export const ImagesContainerText = styled.div`
   height: 100%;
 `;
 
+export const iconHref = styled.div`
+  position: absolute;
+  left: 0;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 70px;
+  border-radius: 100px;
+  justify-content: center;
+  background-color: rgba(187, 159, 98, 1);
+  border: 2px solid rgba(245, 174, 13, 1);
+`;
+
 export const AHref = styled.a`
+  position: relative;
   padding: 19px 40px;
   font-family: "Montserrat";
   font-weight: 600;
   font-size: "34px";
-  color: ${color.bg_color};
+  color: rgb(206, 170, 112);
   border: 1px solid transparent;
   background-color: transparent;
   border-radius: 3px;
@@ -96,13 +111,15 @@ export const AHref = styled.a`
   border-radius: 0;
   text-transform: uppercase;
   font-size: 14px;
+  border: 2px solid ${color.footer_color};
+  border-radius: 100px;
 
   ${theme.breakpoints.up("sm")} {
     padding: 23px 54px;
   }
 
   &:hover {
-    border: 1px solid ${color.black};
+    border: 2px solid rgb(206, 170, 112);
     background-color: white;
     color: ${color.black};
     transition: 0.2s ease-in-out;

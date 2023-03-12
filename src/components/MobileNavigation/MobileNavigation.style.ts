@@ -5,7 +5,8 @@ import { Transform } from "@mui/icons-material";
 import { color } from "../../constants/color";
 
 interface Props {
-  state: boolean;
+  state?: boolean;
+  active?: boolean;
 }
 
 export const Container = styled.div<Props>`
@@ -49,4 +50,12 @@ export const AHref = styled.a`
   color: ${color.white_gray};
   font-family: "Montserrat";
   font-weight: 500;
+`;
+
+export const span = styled.span<Props>`
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: ${(props) => (props.active ? "bold" : "400")};
+  font-size: 14px;
+  color: white;
 `;

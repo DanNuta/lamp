@@ -1,0 +1,111 @@
+{
+  "english": {
+    "languege": "en",
+    "navigation": {
+      "nav": ["Home", "About", "Catalog", "Galery", "Contact"]
+    },
+
+    "home": {
+      "title": "Lifting people’s quality of life with light",
+      "btn": "Go to the catalog"
+    },
+    "about": {
+      "title": "About",
+      "desc": "Lifting people’s quality of life with light - since 2015  We're passionate about inspiring people to make the most of lighting. The Italian tradition and passion for great lighting combined with world class technology enables us to deliver a wide range of products with a superior combination of lasting quality, great design and user-friendly functionality - at competitive prices.  Acma's products light up the dark in more than 15 countries and are sold by more than 300 dealers worldwide. Acmas Group consists of three brands: Nordlux, Design For The People and Energetic.",
+      "btn": ["Hide about section", "Show about section"]
+    },
+    "catalog": {
+      "title": "Catalog"
+    },
+
+    "slogan": {
+      "title": "Lifting people’s quality of life with light"
+    },
+    "galery": {
+      "title": "Galery",
+      "btn": ["Show more", "Show less"]
+    },
+    "map": {
+      "title": "Where we are"
+    },
+
+    "form": {
+      "title": "Form",
+      "desc": "You can ask a question by writing to us in any of the social networks, or by filling out the form on the website:",
+      "form": {
+        "name": "Nume",
+        "email": "Email",
+        "tel": "Telephone",
+        "message": "Message",
+        "err_email": "This email is't valid",
+        "err_tel": "This telephon number is't valid"
+      },
+      "btn": ["Contact", "Sending..."],
+      "validity": "Data send with succes"
+    },
+    "footer": {
+      "nav": ["Home", "About", "Catalog", "Galery", "Contact"],
+      "section": {
+        "links": "Links",
+        "contact": "Contact",
+        "social_media": "Follow on:"
+      },
+      "copyright": "Copyright © 2023. All rights reservedk."
+    }
+  },
+
+  "Deutsche": {
+    "languege": "deu",
+    "navigation": {
+      "nav": ["Heim", "Um", "Katalog", "Galerie", "Kontakt"]
+    },
+
+    "home": {
+      "title": "Mit Licht die Lebensqualität der Menschen steigern",
+      "btn": "Gehen Sie zum Katalog"
+    },
+    "about": {
+      "title": "Um",
+      "desc": "Mit Licht die Lebensqualität der Menschen steigern – seit 2015 Wir begeistern uns leidenschaftlich dafür, Menschen dazu zu inspirieren, das Beste aus Licht zu machen. Die italienische Tradition und Leidenschaft für großartige Beleuchtung kombiniert mit Weltklasse-Technologie ermöglicht es uns, eine breite Palette von Produkten mit einer überlegenen Kombination aus dauerhafter Qualität, großartigem Design und benutzerfreundlicher Funktionalität zu liefern – zu wettbewerbsfähigen Preisen. Die Produkte von Acma bringen Licht ins Dunkel in mehr als 15 Ländern und werden von mehr als 300 Händlern weltweit verkauft. Die Acmas Group besteht aus drei Marken: Nordlux, Design For The People und Energetic.",
+      "btn": ["Verstecken zu Abschnitt", "Über Abschnitt anzeigen"]
+    },
+    "catalog": {
+      "title": "Catalog"
+    },
+
+    "slogan": {
+      "title": "Mit Licht die Lebensqualität der Menschen steigern"
+    },
+    "galery": {
+      "title": "Galerie",
+      "btn": ["Zeig mehr", "Zeige weniger"]
+    },
+    "map": {
+      "title": "Wo wir sind"
+    },
+
+    "form": {
+      "title": "Kontaktiere uns",
+      "desc": "Sie können eine Frage stellen, indem Sie uns in einem der sozialen Netzwerke schreiben oder das Formular auf der Website ausfüllen:",
+      "form": {
+        "name": "Nummer",
+        "email": "Email",
+        "tel": "Telefon",
+        "message": "Nachricht",
+        "err_email": "This email is't valid",
+        "err_tel": "This telephon number is't valid"
+      },
+      "btn": ["Kontakt", "Senden..."],
+      "validity": "Daten erfolgreich gesendet"
+    },
+    "footer": {
+      "nav": ["Heim", "Um", "Katalog", "Galerie", "Kontakt"],
+      "section": {
+        "links": "Verknüpfungen",
+        "contact": "Kontakt",
+        "social_media": "Folgen:"
+      },
+      "copyright": "Copyright © 2023. Alle Rechte vorbehalten."
+    }
+  }
+}

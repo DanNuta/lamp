@@ -5,10 +5,11 @@ import { Container } from "@mui/material";
 import { Logo } from "../../assets";
 
 import { icons } from "../../assets";
-import React from "react";
+import React, { useContext } from "react";
 import { MobileNavigation } from "../../components/";
 
-const link = ["Home", "About", "Catalog", "Galery", "Contact"];
+import { TranslatorContext } from "../../Context/Translator.context";
+import { Props } from "../../Context/type";
 
 export const RootNav: React.FC = () => {
   const [burgher, setBurgher] = React.useState<boolean>(false);
@@ -16,6 +17,12 @@ export const RootNav: React.FC = () => {
   function swichBurgher() {
     setBurgher((prev) => !prev);
   }
+
+  const { translator, changeLeanguege } = useContext(
+    TranslatorContext
+  ) as Props;
+
+  const nav: string[] = translator.navigation.nav;
 
   return (
     <Container>
@@ -45,13 +52,29 @@ export const RootNav: React.FC = () => {
               : (document.body.style.overflow = "")}
 
             <Style.Ul>
-              {link.map((item, i) => {
+              {nav.map((item, i) => {
                 return (
                   <Style.Li key={i}>
                     <Style.AHref href={`#${item}`}>{item}</Style.AHref>
                   </Style.Li>
                 );
               })}
+
+              <Style.Li style={{ cursor: "pointer" }}>
+                <Style.span
+                  active={translator.languege === "en" ? true : false}
+                  onClick={() => changeLeanguege("en")}
+                >
+                  en
+                </Style.span>
+                /
+                <Style.span
+                  active={translator.languege === "deu" ? true : false}
+                  onClick={() => changeLeanguege("deu")}
+                >
+                  deu
+                </Style.span>
+              </Style.Li>
             </Style.Ul>
           </Style.Navigation>
         </Style.Header>

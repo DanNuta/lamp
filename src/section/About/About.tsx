@@ -1,14 +1,28 @@
 import * as Style from "./About.style";
-import { Container } from "@mui/material";
 import { images } from "../../assets";
-import { VButton } from "../../components";
-import { DescriptionAbout } from "../../constants";
 import { TitleSection } from "../../Css/ElementSame";
 import { Btn } from "../../Css/ElementSame";
-import React from "react";
 import { Paraghraph } from "../../Css/ElementSame";
 
+import React, { useContext } from "react";
+import { TranslatorContext } from "../../Context/Translator.context";
+import { Props } from "../../Context/type";
+
+interface PropsTranslator {
+  title: string;
+  desc: string;
+  btn: string[];
+}
+
 export const About: React.FC = () => {
+  const { translator } = useContext(TranslatorContext) as Props;
+
+  const translatorAbout: PropsTranslator = {
+    title: translator.about.title,
+    desc: translator.about.desc,
+    btn: translator.about.btn,
+  };
+
   const [readMore, setReadMore] = React.useState<boolean>(false);
 
   function readMoreFn() {
@@ -19,7 +33,7 @@ export const About: React.FC = () => {
     <div id="About">
       {readMore && (
         <Style.ContainerStyle>
-          <TitleSection>About</TitleSection>
+          <TitleSection>{translatorAbout.title}</TitleSection>
 
           <Style.ContainerElement>
             <Style.ContainerItem>
@@ -28,25 +42,7 @@ export const About: React.FC = () => {
 
             <Style.ContainerItem>
               <Style.ContainerItemDiv>
-                <Paraghraph>
-                  Lifting people’s quality of life with light - since 2015
-                  <br />
-                  <br />
-                  We're passionate about inspiring people to make the most of
-                  lighting. The Italian tradition and passion for great lighting
-                  combined with world class technology enables us to deliver a
-                  wide range of products with a superior combination of lasting
-                  quality, great design and user-friendly functionality - at
-                  competitive prices.
-                  <br />
-                  <br />
-                  Acma's products light up the dark in more than 15 countries
-                  and are sold by more than 300 dealers worldwide.
-                  <br />
-                  <br />
-                  Acmas Group consists of three brands: Nordlux, Design For The
-                  People and Energetic.
-                </Paraghraph>
+                <Paraghraph>{translatorAbout.desc}</Paraghraph>
               </Style.ContainerItemDiv>
             </Style.ContainerItem>
           </Style.ContainerElement>
@@ -55,7 +51,7 @@ export const About: React.FC = () => {
 
       <Style.CenterBtn margin={readMore}>
         <Btn onClick={readMoreFn}>
-          {readMore ? "Hide about section" : "Show about section"}
+          {readMore ? `${translatorAbout.btn[0]}` : `${translatorAbout.btn[1]}`}
         </Btn>
       </Style.CenterBtn>
     </div>

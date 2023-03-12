@@ -60,7 +60,6 @@ export const Contact: React.FC = () => {
   const [state, dispach] = useReducer(reducerFn, defaultState);
 
   useEffect(() => {
-    console.log("sa");
     setTimeout(function () {
       dispach({ type: Type.VALIDITY, payload: "" });
     }, 2000);
