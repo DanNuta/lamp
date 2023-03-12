@@ -5,11 +5,27 @@ import { Grid } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { TitleSection, BtnFilter } from "../../Css/ElementSame";
 
+import React, { useContext } from "react";
+import { TranslatorContext } from "../../Context/Translator.context";
+import { Props as PropsFilterContext } from "../../Context/type";
+
+interface FilterProps {
+  title: string;
+  section: string;
+}
+
 export const FilterView: React.FC<Props> = (props) => {
+  const { translator } = useContext(TranslatorContext) as PropsFilterContext;
+
+  const translatorFilter: FilterProps = {
+    title: translator.catalog.title,
+    section: translator.sections.catalog,
+  };
+
   return (
     <Style.ContanerTop>
-      <Style.ContainerStyle id="Catalog">
-        <TitleSection>Catalog</TitleSection>
+      <Style.ContainerStyle id={`${translatorFilter.section}`}>
+        <TitleSection>{translatorFilter.title}</TitleSection>
 
         <Style.ContainerParent>
           <VFilterBtn

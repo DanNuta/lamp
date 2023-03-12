@@ -45,7 +45,9 @@ export const RootFooter: React.FC = () => {
       <Container>
         <Style.ContainerGrid container>
           <Style.LogoGrid xs={12} sm={12} md={3} item>
-            <Logo />
+            <Style.AHref href="#">
+              <Logo />
+            </Style.AHref>
           </Style.LogoGrid>
 
           <Style.LinksGrid xs={12} sm={12} md={3} item>
@@ -73,7 +75,6 @@ export const RootFooter: React.FC = () => {
               <Style.li>
                 <AccessTimeOutlinedIcon />
                 <Style.TextContact>
-                  {" "}
                   {footerContentText.timeWork}
                 </Style.TextContact>
               </Style.li>

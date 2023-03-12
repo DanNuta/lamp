@@ -12,6 +12,7 @@ interface PropsTranslator {
   title: string;
   desc: string;
   btn: string[];
+  section: string;
 }
 
 export const About: React.FC = () => {
@@ -21,6 +22,7 @@ export const About: React.FC = () => {
     title: translator.about.title,
     desc: translator.about.desc,
     btn: translator.about.btn,
+    section: translator.sections.about,
   };
 
   const [readMore, setReadMore] = React.useState<boolean>(false);
@@ -30,7 +32,7 @@ export const About: React.FC = () => {
   }
 
   return (
-    <div id="About">
+    <div id={`${translatorAbout.section}`}>
       {readMore && (
         <Style.ContainerStyle>
           <TitleSection>{translatorAbout.title}</TitleSection>

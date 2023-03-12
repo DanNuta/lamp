@@ -1,6 +1,15 @@
 {
   "english": {
     "languege": "en",
+
+    "sections": {
+      "home": "Home",
+      "about": "About",
+      "catalog": "Catalog",
+      "galery": "Galery",
+      "contact": "Contact"
+    },
+
     "navigation": {
       "nav": ["Home", "About", "Catalog", "Galery", "Contact"]
     },
@@ -56,6 +65,14 @@
 
   "Deutsche": {
     "languege": "deu",
+    "sections": {
+      "home": "Heim",
+      "about": "Um",
+      "catalog": "Katalog",
+      "galery": "Galerie",
+      "contact": "Kontakt"
+    },
+
     "navigation": {
       "nav": ["Heim", "Um", "Katalog", "Galerie", "Kontakt"]
     },

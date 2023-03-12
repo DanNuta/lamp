@@ -25,6 +25,7 @@ interface ContactProps {
   };
   btn: string[];
   validity: string;
+  section: string;
 }
 
 export const ContactView: React.FC<PropsView> = (props) => {
@@ -45,12 +46,13 @@ export const ContactView: React.FC<PropsView> = (props) => {
     },
     btn: transText.btn,
     validity: transText.validity,
+    section: translator.sections.contact,
   };
 
   const form = useRef<HTMLFormElement>(null);
 
   return (
-    <Style.ContainerStyle id="Contact">
+    <Style.ContainerStyle id={`${translatorText.section}`}>
       <TitleSection>{translatorText.title}</TitleSection>
 
       <Grid container>

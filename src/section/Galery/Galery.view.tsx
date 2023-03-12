@@ -13,6 +13,7 @@ import { Props } from "../../Context/type";
 interface PropsGalery {
   title: string;
   btn: string[];
+  section: string;
 }
 
 export const GaleryView: React.FC<GaleryType> = (props) => {
@@ -21,10 +22,11 @@ export const GaleryView: React.FC<GaleryType> = (props) => {
   const translationText = {
     title: translator.galery.title,
     btn: translator.galery.btn,
+    section: translator.sections.galery,
   };
 
   return (
-    <Style.ContainerStyle id="Galery">
+    <Style.ContainerStyle id={`${translationText.section}`}>
       <TitleSection>{translationText.title}</TitleSection>
 
       {props.data.img && (
