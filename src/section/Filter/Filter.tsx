@@ -1,7 +1,8 @@
 import { FilterView } from "../Filter/Filter.view";
 import { filterItem } from "../../constants";
-import React from "react";
+import React, {useEffect} from "react";
 import { PropsFilter } from "../../constants/data/type";
+import  axios  from 'axios';
 
 const filter = new Set(filterItem.map((item) => item.filter));
 const filterElement = [...filter];
@@ -10,7 +11,7 @@ export const Filter: React.FC = () => {
   const [filter, setFilter] = React.useState<PropsFilter[]>([]);
   const [filterCheck, setFilterCheck] = React.useState<boolean>(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     filterItemFn(filterElement[0]);
   }, []);
 
@@ -23,6 +24,32 @@ export const Filter: React.FC = () => {
 
     setFilter((prev) => (prev = filterArray));
   }
+
+
+  useEffect(()=>{
+
+
+    axios.get(`http://localhost:8000/catalog`)
+    .then(res => {
+      const persons = res.data;
+      console.log(persons)
+    })
+
+
+
+    async function getCatalog(){
+      const data = await fetch("http://localhost:8000/catalog");
+     
+
+      console.log(data)
+    }
+
+   
+  })
+
+
+
+
   return (
     <FilterView
       onHandlerFilter={filterItemFn}
