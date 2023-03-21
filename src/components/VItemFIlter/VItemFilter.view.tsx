@@ -12,25 +12,17 @@ export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
   return (
     <Style.ParentCard sx={{ maxWidth: 345 }}>
       <Style.ImageSliderItem>
-        {props.img.map((item, i) => {
-          return (
-            <Style.ImagesContainer key={i} index={props.index} i={i}>
-              <CardMedia component="img" height="100%" image={`${item}`} />
+      
+              <CardMedia component="img" height="100%" image={`http://localhost:8000/images/${props.img}`} />
               <Style.BackroundElement />
-            </Style.ImagesContainer>
-          );
-        })}
-
-        <VDots
-          index={props.index}
-          onHandler={props.onHandler}
-          img={props.img}
-        />
+           
+      
+       
       </Style.ImageSliderItem>
 
       <CardContent>
         <Style.TypographyTitle gutterBottom variant="h5">
-          {props.filter}
+          {props.category}
         </Style.TypographyTitle>
         <Style.TypographyPrice variant="body2" color="text.secondary">
           ${props.price}

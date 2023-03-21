@@ -7,20 +7,20 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 
 interface PropsStyle {
-  colorText?: string;
+  colortext?: string;
   bg: string;
   border: string;
 }
 
 export const VFilterBtn: React.FC<Props> = (props) => {
   const BtnFilter = styled(Button)<PropsStyle>(
-    ({ theme, colorText, bg, border }) => ({
+    ({ theme, colortext, bg, border }) => ({
       fontFamily: "Montserrat",
       fontWeight: "600",
       fontSize: "12px",
       paddingInline: "15px",
       paddingBlock: "13px",
-      color: `${colorText}`,
+      color: `${colortext}`,
       border: `1px solid ${border}`,
       backgroundColor: `${bg}`,
 
@@ -37,15 +37,15 @@ export const VFilterBtn: React.FC<Props> = (props) => {
       {props.filterCategory.map((item, i) => {
         return (
           <BtnFilter
-            colorText={props.filterData === item ? `${color.black}` : "white"}
-            bg={props.filterData === item ? "white" : `${color.black}`}
+            colortext={props.filterData?.category === item.category ? `${color.black}` : "white"}
+            bg={props.filterData?.category === item.category ? "white" : `${color.black}`}
             border={
-              props.filterData === item ? `${color.black}` : "transparent"
+              props.filterData?.category === item.category ? `${color.black}` : "transparent"
             }
             onClick={() => props.onHandlerFilter(item)}
             key={i}
           >
-            {`${item}`}
+            {`${item.category}`}
           </BtnFilter>
         );
       })}

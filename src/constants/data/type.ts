@@ -1,8 +1,15 @@
-export interface PropsFilter {
-  img: string[];
-  filter: string;
-  price: number;
-  description: string;
+
+
+interface BackendCategory {
+  id: number,
+  category: string
+}
+
+
+export interface PropsFilter extends BackendCategory  {
+  price: number,
+  img: string,
+  title: string,
 }
 
 export interface testimonial {

@@ -3,7 +3,7 @@ import { VFilterItem, VFilterBtn } from "../../components";
 import { Props } from "./type";
 import { Grid } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
-import { TitleSection, BtnFilter } from "../../Css/ElementSame";
+import { TitleSection } from "../../Css/ElementSame";
 
 import React, { useContext } from "react";
 import { TranslatorContext } from "../../Context/Translator.context";
@@ -28,10 +28,11 @@ export const FilterView: React.FC<Props> = (props) => {
         <TitleSection>{translatorFilter.title}</TitleSection>
 
         <Style.ContainerParent>
+
           <VFilterBtn
             filterCategory={props.filterCategory}
             onHandlerFilter={props.onHandlerFilter}
-            filterData={props.filter[0]?.filter}
+            filterData={props.filter[0]}
           />
 
           <Grid layout component={motion.div} container spacing={3}>
@@ -50,6 +51,8 @@ export const FilterView: React.FC<Props> = (props) => {
                     md={4}
                   >
                     <VFilterItem {...item} />
+
+                    
                   </Grid>
                 );
               })}

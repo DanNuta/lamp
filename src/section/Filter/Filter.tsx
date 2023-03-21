@@ -2,61 +2,72 @@ import { FilterView } from "../Filter/Filter.view";
 import { filterItem } from "../../constants";
 import React, {useEffect} from "react";
 import { PropsFilter } from "../../constants/data/type";
-import  axios  from 'axios';
 
-const filter = new Set(filterItem.map((item) => item.filter));
-const filterElement = [...filter];
+
+interface BackendCategory {
+  id: number,
+  category: string
+}
+
+interface BackendCategorie extends BackendCategory {
+  price: number,
+  img: string,
+  title: string,
+}
+
+// const filter = new Set(filterItem.map((item) => item.filter));
+// const filterElement = [...filter];
 
 export const Filter: React.FC = () => {
-  const [filter, setFilter] = React.useState<PropsFilter[]>([]);
+
+  const [dataDb, setDataDb] = React.useState<BackendCategorie[]>([]);
+  const [categoryDB, setCategoryDb] = React.useState<BackendCategory[]>([]);
+
+  const [filter, setFilter] = React.useState<BackendCategorie[]>([]);
   const [filterCheck, setFilterCheck] = React.useState<boolean>(false);
 
+
+  useEffect(()=>{
+
+    async function getData(){
+      const data = await fetch("http://localhost:8000/catalog");
+      const json = await data.json();
+      setDataDb(json)
+    };
+
+    async function getCategory(){
+      const category = await fetch("http://localhost:8000/category");
+      const json = await category.json();
+      setCategoryDb(json)
+    }
+
+    getCategory()
+    getData();
+   
+  }, []);
+
+
+
   useEffect(() => {
-    filterItemFn(filterElement[0]);
+    filterItemFn(categoryDB[0]);
   }, []);
 
   function cheackFilterBtn() {
     setFilterCheck((prev) => !prev);
   }
 
-  function filterItemFn(data: string) {
-    const filterArray = filterItem.filter((item) => item.filter === data);
-
+  function filterItemFn(data: BackendCategory) {
+    const filterArray = dataDb.filter((item) => item.category === data.category);
     setFilter((prev) => (prev = filterArray));
   }
-
-
-  useEffect(()=>{
-
-
-    axios.get(`http://localhost:8000/catalog`)
-    .then(res => {
-      const persons = res.data;
-      console.log(persons)
-    })
-
-
-
-    async function getCatalog(){
-      const data = await fetch("http://localhost:8000/catalog");
-     
-
-      console.log(data)
-    }
-
-   
-  })
-
-
-
 
   return (
     <FilterView
       onHandlerFilter={filterItemFn}
       onHandlerFilterBtn={cheackFilterBtn}
-      filterCategory={filterElement}
+      filterCategory={categoryDB}
       filterCheck={filterCheck}
-      filter={filter}
+      filter={dataDb}
     />
   );
 };
