@@ -28,16 +28,15 @@ export const FilterView: React.FC<Props> = (props) => {
         <TitleSection>{translatorFilter.title}</TitleSection>
 
         <Style.ContainerParent>
-
           <VFilterBtn
             filterCategory={props.filterCategory}
             onHandlerFilter={props.onHandlerFilter}
-            filterData={props.filter[0]}
+            filterData={props.filter?.[0]}
           />
 
           <Grid layout component={motion.div} container spacing={3}>
             <AnimatePresence>
-              {props.filter.map((item, i) => {
+              {props.filter?.map((item, i) => {
                 return (
                   <Grid
                     animate={{ opacity: 1, scale: 1 }}
@@ -51,8 +50,6 @@ export const FilterView: React.FC<Props> = (props) => {
                     md={4}
                   >
                     <VFilterItem {...item} />
-
-                    
                   </Grid>
                 );
               })}

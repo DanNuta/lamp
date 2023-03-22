@@ -7,6 +7,7 @@ import { TitleSection, Btn, ParagraphSection } from "../../Css/ElementSame";
 import { useEffect, useRef } from "react";
 import Alert from "@mui/material/Alert";
 import { text, footerContentText } from "../../TextContent/text";
+import {color} from "../../constants/color";
 
 import React, { useContext } from "react";
 import { TranslatorContext } from "../../Context/Translator.context";
@@ -64,7 +65,7 @@ export const ContactView: React.FC<PropsView> = (props) => {
       <Grid container>
         <Style.GridItemIcon xs={12} sm={6} md={6} item>
           <ParagraphSection>{footerContentText.email}</ParagraphSection>
-          <VSocialMedia />
+          <VSocialMedia color={color.black} />
         </Style.GridItemIcon>
 
         <Grid xs={12} sm={6} md={6} item>

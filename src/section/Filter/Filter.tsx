@@ -1,64 +1,91 @@
 import { FilterView } from "../Filter/Filter.view";
 import { filterItem } from "../../constants";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { PropsFilter } from "../../constants/data/type";
-
+import { firestore } from "../../firebase/confog";
 
 interface BackendCategory {
-  id: number,
-  category: string
+  id: string;
+  category: string;
 }
 
 interface BackendCategorie extends BackendCategory {
-  price: number,
-  img: string,
-  title: string,
+  price: number;
+  img: string;
+  title: string;
 }
 
-// const filter = new Set(filterItem.map((item) => item.filter));
-// const filterElement = [...filter];
-
 export const Filter: React.FC = () => {
+  const [dataDb, setDataDb] = React.useState<BackendCategorie[] | null>([]);
+  const [categoryDB, setCategoryDb] = React.useState<BackendCategory[] | null>([]);
 
-  const [dataDb, setDataDb] = React.useState<BackendCategorie[]>([]);
-  const [categoryDB, setCategoryDb] = React.useState<BackendCategory[]>([]);
-
-  const [filter, setFilter] = React.useState<BackendCategorie[]>([]);
+  //element din dataDbAfter filter;
+  const [filter, setFilter] = React.useState<BackendCategorie[] | null>([]);
   const [filterCheck, setFilterCheck] = React.useState<boolean>(false);
 
-
-  useEffect(()=>{
-
-    async function getData(){
-      const data = await fetch("http://localhost:8000/catalog");
-      const json = await data.json();
-      setDataDb(json)
-    };
-
-    async function getCategory(){
-      const category = await fetch("http://localhost:8000/category");
-      const json = await category.json();
-      setCategoryDb(json)
-    }
-
-    getCategory()
-    getData();
-   
-  }, []);
-
-
-
   useEffect(() => {
-    filterItemFn(categoryDB[0]);
+
+    firestore.collection("lamp_catalog").get().then(function(snapshot){
+      let data: any = [];
+      snapshot.docs.forEach(item => {
+        data.push({id: item.id, ...item.data()})
+      })
+
+      setDataDb(data)
+
+      setFilter((prev) => {
+        const itemFilter: BackendCategorie[] = data.filter(
+          (item: BackendCategorie) => data[0].category === item.category
+        );
+
+        return itemFilter;
+      });
+    })
+
+
+    firestore.collection("lamp_category").get().then(function(snapshot){
+      let data: any = [];
+      snapshot.docs.forEach(item => {
+        data.push({id: item.id, ...item.data()})
+      })
+      setCategoryDb(data)
+
+      
+    })
+
+
+
+    // async function getData() {
+    //   const data = await fetch("http://localhost:8000/catalog");
+    //   const json: any = await data.json();
+    //   setDataDb(json);
+
+    //   setFilter((prev) => {
+    //     const itemFilter: BackendCategorie[] = json.filter(
+    //       (item: BackendCategorie) => item.category === json[0].category
+    //     );
+
+    //     return itemFilter;
+    //   });
+    // }
+
+    // async function getCategory() {
+    //   const category = await fetch("http://localhost:8000/category");
+    //   const json = await category.json();
+    //   setCategoryDb(json);
+    // }
+
+    // getCategory();
+    // getData();
   }, []);
 
   function cheackFilterBtn() {
     setFilterCheck((prev) => !prev);
   }
 
-  function filterItemFn(data: BackendCategory) {
-    const filterArray = dataDb.filter((item) => item.category === data.category);
-    setFilter((prev) => (prev = filterArray));
+  function filterItemFn(data: string) {
+    const filterArray = dataDb!.filter((item) => item.category === data);
+    setFilter(filterArray);
   }
 
   return (
@@ -67,7 +94,7 @@ export const Filter: React.FC = () => {
       onHandlerFilterBtn={cheackFilterBtn}
       filterCategory={categoryDB}
       filterCheck={filterCheck}
-      filter={dataDb}
+      filter={filter}
     />
   );
 };

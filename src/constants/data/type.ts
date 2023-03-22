@@ -1,15 +1,12 @@
-
-
 interface BackendCategory {
-  id: number,
-  category: string
+  id: string;
+  category: string;
 }
 
-
-export interface PropsFilter extends BackendCategory  {
-  price: number,
-  img: string,
-  title: string,
+export interface PropsFilter extends BackendCategory {
+  price: number;
+  img: string;
+  title: string;
 }
 
 export interface testimonial {

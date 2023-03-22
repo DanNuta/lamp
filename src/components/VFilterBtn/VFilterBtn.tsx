@@ -21,28 +21,40 @@ export const VFilterBtn: React.FC<Props> = (props) => {
       paddingInline: "15px",
       paddingBlock: "13px",
       color: `${colortext}`,
-      border: `1px solid ${border}`,
+      //border: `1px solid ${border}`,
       backgroundColor: `${bg}`,
+      borderRadius: 0,
+      //fontFamily: "Tilda Sanns",
 
       "&:hover": {
-        backgroundColor: "white",
-        color: `${color.black}`,
-        border: `1px solid ${color.black}`,
+        backgroundColor: `${color.btnHover}`,
+        color: `${color.colorHoverBtn}`,
+        //border: `1px solid ${color.btnHover}`,
       },
     })
   );
 
   return (
     <Style.FilterCategory>
-      {props.filterCategory.map((item, i) => {
+      {props.filterCategory?.map((item, i) => {
         return (
           <BtnFilter
-            colortext={props.filterData?.category === item.category ? `${color.black}` : "white"}
-            bg={props.filterData?.category === item.category ? "white" : `${color.black}`}
-            border={
-              props.filterData?.category === item.category ? `${color.black}` : "transparent"
+            colortext={
+              props.filterData?.category === item.category
+                ? `${color.black}`
+                : "white"
             }
-            onClick={() => props.onHandlerFilter(item)}
+            bg={
+              props.filterData?.category === item.category
+                ? `${color.btnHover}`
+                : `${color.black}`
+            }
+            border={
+              props.filterData?.category === item.category
+                ? `${color.black}`
+                : "transparent"
+            }
+            onClick={() => props.onHandlerFilter(item.category)}
             key={i}
           >
             {`${item.category}`}

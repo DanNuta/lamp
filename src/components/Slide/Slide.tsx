@@ -31,10 +31,6 @@ export const Slider: React.FC<SliderType> = (props) => {
         <Style.ContainerText>
           <Style.H1>{homeText.title}</Style.H1>
           <Style.AHref href="#Catalog">
-            <Style.iconHref>
-              <EmojiObjectsIcon style={{ color: "rgba(245, 174, 13, 1)" }} />
-            </Style.iconHref>
-
             {homeText.btn}
           </Style.AHref>
         </Style.ContainerText>

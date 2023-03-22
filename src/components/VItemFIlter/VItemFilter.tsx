@@ -8,8 +8,5 @@ export const VFilterItem: React.FC<PropsFilter> = (props) => {
   function dots(index: number) {
     setIndex((prev) => (prev = index));
   }
-  return <VItemFIlterView 
-           {...props} 
-           onHandler={dots} 
-           index={index} />;
+  return <VItemFIlterView {...props} />;
 };

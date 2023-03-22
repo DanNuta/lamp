@@ -5,10 +5,24 @@ import { Grid } from "@mui/material";
 import { color } from "../../constants/color";
 import { theme } from "../../Css/BreakPoints";
 
+
+export const ContainerParent = styled.div`
+padding-top: 50px;
+background-color: ${color.colorHoverBtn};
+color: white;
+
+${theme.breakpoints.up("md")} {
+    padding-top: 80px
+  }
+
+`
+
+
 export const ContainerGrid = styleMui(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: "40px",
+  color: 'white',
 
   [theme.breakpoints.up("md")]: {
     gap: "0",
@@ -20,6 +34,11 @@ export const ul = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 25px;
+  color: white;
+
+  ${theme.breakpoints.up("md")} {
+    align-items: flex-start;
+  }
 `;
 
 export const li = styled.li`
@@ -28,13 +47,16 @@ export const li = styled.li`
   gap: 10px;
   color: ${color.black};
   justify-content: center;
+  color: 'white',
 
   ${theme.breakpoints.up("md")} {
     justify-content: start;
   }
 `;
 
-export const TextContact = styleMui(Typography)(({}) => ({}));
+export const TextContact = styleMui(Typography)(({}) => ({
+  color: 'white',
+}));
 
 export const LogoGrid = styleMui(Grid)(({ theme }) => ({
   display: "flex",
@@ -53,17 +75,19 @@ export const AHref = styled.a`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  color: ${color.black};
+  color: white;
 `;
 
 export const linkUl = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  color: white;
 `;
 
 export const linkLi = styled.li`
   text-align: center;
+  color: 'white';
 
   ${theme.breakpoints.up("md")} {
     text-align: left;
@@ -75,8 +99,9 @@ export const TitleSectionFooter = styleMui(Typography)(({ theme }) => ({
   fontStyle: "normal",
   fontWeight: "700",
   fontSize: "18px",
-  color: `${color.black}`,
+ // color: `${color.black}`,
   marginBottom: "21px",
+  color: 'white',
 
   [theme.breakpoints.up("md")]: {
     fontSize: "20px",
@@ -87,6 +112,7 @@ export const LinksGrid = styleMui(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  color: 'white',
 
   [theme.breakpoints.up("md")]: {
     alignItems: "start",
@@ -97,6 +123,7 @@ export const ContactLink = styleMui(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  color: 'white',
 
   [theme.breakpoints.up("md")]: {
     alignItems: "start",
@@ -114,7 +141,7 @@ export const SocialMediaGrid = styleMui(Grid)(({ theme }) => ({
 }));
 
 export const FooterElement = styled.div`
-  background-color: ${color.footer_color};
+  background-color: black;
 `;
 
 export const FooterParaghraph = styleMui(Typography)(({ theme }) => ({

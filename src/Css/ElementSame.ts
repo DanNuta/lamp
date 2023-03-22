@@ -40,9 +40,9 @@ export const Btn = styleddMui(Button)(({ theme }) => ({
   borderRadius: "0px",
 
   "&:hover": {
-    backgroundColor: "white",
-    color: `${color.black}`,
-    border: `1px solid ${color.black}`,
+    backgroundColor: `${color.btnHover}`,
+    color: `${color.colorHoverBtn}`,
+    //border: `1px solid ${color.black}`,
   },
 }));
 
@@ -87,11 +87,11 @@ export const AHref = styled.a<Props>`
   }
 
   &:hover {
-    border: 1px solid ${color.black};
-    background-color: white;
-    color: ${color.black};
+    //border: 1px solid ${color};
+    background-color: ${color.btnHover};
+    color: ${color.colorHoverBtn};
     transition: 0.2s ease-in-out;
-    background-color: ${color.white_gray};
+   // background-color: ${color.white_gray};
   }
 `;
 

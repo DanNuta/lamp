@@ -103,26 +103,20 @@ export const AHref = styled.a`
   font-family: "Montserrat";
   font-weight: 600;
   font-size: "34px";
-  color: rgb(206, 170, 112);
-  border: 1px solid transparent;
-  background-color: transparent;
-  border-radius: 3px;
+  color: white;
+  background-color: ${color.black};
   transition: 0.2s ease-in-out;
   border-radius: 0;
   text-transform: uppercase;
   font-size: 14px;
-  border: 2px solid ${color.footer_color};
-  border-radius: 100px;
 
   ${theme.breakpoints.up("sm")} {
     padding: 23px 54px;
   }
 
   &:hover {
-    border: 2px solid rgb(206, 170, 112);
-    background-color: white;
     color: ${color.black};
     transition: 0.2s ease-in-out;
-    background-color: ${color.white_gray};
+    background-color: ${color.btnHover};
   }
 `;

@@ -13,6 +13,15 @@ interface Props {
 export const ImageSliderItem = styled.div`
   position: relative;
   height: 400px;
+  display: flex;
+  align-items: center;
+
+
+  img{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+  }
 `;
 
 export const CardItem = styleMui(CardMedia)`
@@ -25,16 +34,6 @@ export const ImagesContainer = styled.div<Props>`
   height: 100%;
   z-index: ${(props) => (props.index === props.i ? 2 : 1)};
   overflow: hidden;
-
-  img {
-    transition: 0.3s ease-in-out;
-    object-fit: cover;
-  }
-
-  img:hover {
-    transform: scale(1.1);
-    transition: 0.3s ease-in-out;
-  }
 `;
 
 export const BackroundElement = styled.div`
@@ -55,15 +54,14 @@ export const AHref = styled.a`
   font-weight: 600;
   font-size: 12px;
   color: white;
-  border: 1px solid transparent;
+  //border: 1px solid transparent;
   background-color: ${color.black};
   border-radius: 3px;
   transition: 0.2s ease-in-out;
 
   &:hover {
-    border: 1px solid ${color.black};
-    background-color: white;
-    color: ${color.black};
+    background-color: ${color.btnHover};
+    color: ${color.colorHoverBtn};
     transition: 0.2s ease-in-out;
   }
 `;

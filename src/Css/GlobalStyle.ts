@@ -1,7 +1,13 @@
 import { createGlobalStyle } from "styled-components";
-import { color } from "../constants/color";
+import { color, Font } from "../constants/color";
 
 export const GlobalStyle = createGlobalStyle`
+
+@font-face {
+  font-family: 'Tilda';
+  src: url(${Font.lightTilda}) format('woff2');
+}
+
 *,
 *::before,
 *::after {
@@ -54,6 +60,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: ${color.bg_color};
+  font-family: "sans-serif FiraCode";
 }
 
 

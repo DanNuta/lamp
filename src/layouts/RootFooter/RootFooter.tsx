@@ -3,6 +3,8 @@ import * as Style from "./RootFooter.style";
 import { Grid } from "@mui/material";
 import { Logo } from "../../assets";
 import { VSocialMedia } from "../../components";
+import {color} from "../../constants/color";
+import { LogoDark } from "../../constants/data/logoDark";
 
 import { footerContentText } from "../../TextContent/text";
 
@@ -41,12 +43,12 @@ export const RootFooter: React.FC = () => {
   };
 
   return (
-    <>
-      <Container>
+    <Style.ContainerParent>
+      <Container >
         <Style.ContainerGrid container>
           <Style.LogoGrid xs={12} sm={12} md={3} item>
             <Style.AHref href="#">
-              <Logo />
+              <LogoDark />
             </Style.AHref>
           </Style.LogoGrid>
 
@@ -73,7 +75,7 @@ export const RootFooter: React.FC = () => {
 
             <Style.ul>
               <Style.li>
-                <AccessTimeOutlinedIcon />
+                <AccessTimeOutlinedIcon style={{color: "white"}} />
                 <Style.TextContact>
                   {footerContentText.timeWork}
                 </Style.TextContact>
@@ -88,7 +90,7 @@ export const RootFooter: React.FC = () => {
               </Style.li> */}
 
               <Style.li>
-                <EmailOutlinedIcon />
+                <EmailOutlinedIcon style={{color: "white"}} />
                 <Style.TextContact>
                   {" "}
                   {footerContentText.email}
@@ -96,7 +98,7 @@ export const RootFooter: React.FC = () => {
               </Style.li>
 
               <Style.li>
-                <LocationOnOutlinedIcon />
+                <LocationOnOutlinedIcon style={{color: "white"}} />
                 <Style.TextContact>
                   {" "}
                   {footerContentText.location}
@@ -109,7 +111,7 @@ export const RootFooter: React.FC = () => {
             <Style.TitleSectionFooter>
               {footerPross.section.social_media}
             </Style.TitleSectionFooter>
-            <VSocialMedia />
+            <VSocialMedia color="white" />
           </Style.SocialMediaGrid>
         </Style.ContainerGrid>
       </Container>
@@ -117,6 +119,6 @@ export const RootFooter: React.FC = () => {
       <Style.FooterElement>
         <Style.FooterParaghraph>{footerPross.copyright}</Style.FooterParaghraph>
       </Style.FooterElement>
-    </>
+    </Style.ContainerParent>
   );
 };
