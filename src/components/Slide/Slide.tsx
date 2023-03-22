@@ -30,9 +30,7 @@ export const Slider: React.FC<SliderType> = (props) => {
       <Style.ImagesContainerText>
         <Style.ContainerText>
           <Style.H1>{homeText.title}</Style.H1>
-          <Style.AHref href="#Catalog">
-            {homeText.btn}
-          </Style.AHref>
+          <Style.AHref href="#Catalog">{homeText.btn}</Style.AHref>
         </Style.ContainerText>
       </Style.ImagesContainerText>
     </Style.Container>

@@ -16,8 +16,7 @@ export const ImageSliderItem = styled.div`
   display: flex;
   align-items: center;
 
-
-  img{
+  img {
     width: 100%;
     height: 70%;
     object-fit: cover;

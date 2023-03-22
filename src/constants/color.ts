@@ -10,10 +10,9 @@ export const color = {
   btnHover: "#a8a8a8",
   colorHoverBtn: "#403b3b",
 
-  footerColor: "403B3B"
+  footerColor: "403B3B",
 };
 
-
 export const Font = {
-  lightTilda: LightTilda
-}
+  lightTilda: LightTilda,
+};

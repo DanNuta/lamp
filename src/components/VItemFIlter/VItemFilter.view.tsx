@@ -12,10 +12,7 @@ export const VItemFIlterView: React.FC<PropsFilterItem> = (props) => {
   return (
     <Style.ParentCard sx={{ maxWidth: 345 }}>
       <Style.ImageSliderItem>
-        <CardMedia
-          component="img"
-          image={`${props.img}`}
-        />
+        <CardMedia component="img" image={`${props.img}`} />
         <Style.BackroundElement />
       </Style.ImageSliderItem>
 

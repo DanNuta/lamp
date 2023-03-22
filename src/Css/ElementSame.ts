@@ -91,7 +91,7 @@ export const AHref = styled.a<Props>`
     background-color: ${color.btnHover};
     color: ${color.colorHoverBtn};
     transition: 0.2s ease-in-out;
-   // background-color: ${color.white_gray};
+    // background-color: ${color.white_gray};
   }
 `;
 

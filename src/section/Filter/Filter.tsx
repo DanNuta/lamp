@@ -1,5 +1,5 @@
 import { FilterView } from "../Filter/Filter.view";
-import { filterItem } from "../../constants";
+//import { filterItem } from "../../constants";
 import React, { useEffect } from "react";
 import { PropsFilter } from "../../constants/data/type";
 import { firestore } from "../../firebase/confog";
@@ -17,43 +17,45 @@ interface BackendCategorie extends BackendCategory {
 
 export const Filter: React.FC = () => {
   const [dataDb, setDataDb] = React.useState<BackendCategorie[] | null>([]);
-  const [categoryDB, setCategoryDb] = React.useState<BackendCategory[] | null>([]);
+  const [categoryDB, setCategoryDb] = React.useState<BackendCategory[] | null>(
+    []
+  );
 
   //element din dataDbAfter filter;
   const [filter, setFilter] = React.useState<BackendCategorie[] | null>([]);
   const [filterCheck, setFilterCheck] = React.useState<boolean>(false);
 
   useEffect(() => {
+    firestore
+      .collection("lamp_catalog")
+      .get()
+      .then(function (snapshot) {
+        let data: any = [];
+        snapshot.docs.forEach((item) => {
+          data.push({ id: item.id, ...item.data() });
+        });
 
-    firestore.collection("lamp_catalog").get().then(function(snapshot){
-      let data: any = [];
-      snapshot.docs.forEach(item => {
-        data.push({id: item.id, ...item.data()})
-      })
+        setDataDb(data);
 
-      setDataDb(data)
+        setFilter((prev) => {
+          const itemFilter: BackendCategorie[] = data.filter(
+            (item: BackendCategorie) => data[0].category === item.category
+          );
 
-      setFilter((prev) => {
-        const itemFilter: BackendCategorie[] = data.filter(
-          (item: BackendCategorie) => data[0].category === item.category
-        );
-
-        return itemFilter;
+          return itemFilter;
+        });
       });
-    })
 
-
-    firestore.collection("lamp_category").get().then(function(snapshot){
-      let data: any = [];
-      snapshot.docs.forEach(item => {
-        data.push({id: item.id, ...item.data()})
-      })
-      setCategoryDb(data)
-
-      
-    })
-
-
+    firestore
+      .collection("lamp_category")
+      .get()
+      .then(function (snapshot) {
+        let data: any = [];
+        snapshot.docs.forEach((item) => {
+          data.push({ id: item.id, ...item.data() });
+        });
+        setCategoryDb(data);
+      });
 
     // async function getData() {
     //   const data = await fetch("http://localhost:8000/catalog");

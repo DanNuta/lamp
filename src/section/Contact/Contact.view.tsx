@@ -7,7 +7,7 @@ import { TitleSection, Btn, ParagraphSection } from "../../Css/ElementSame";
 import { useEffect, useRef } from "react";
 import Alert from "@mui/material/Alert";
 import { text, footerContentText } from "../../TextContent/text";
-import {color} from "../../constants/color";
+import { color } from "../../constants/color";
 
 import React, { useContext } from "react";
 import { TranslatorContext } from "../../Context/Translator.context";

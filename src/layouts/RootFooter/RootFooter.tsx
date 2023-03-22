@@ -3,7 +3,7 @@ import * as Style from "./RootFooter.style";
 import { Grid } from "@mui/material";
 import { Logo } from "../../assets";
 import { VSocialMedia } from "../../components";
-import {color} from "../../constants/color";
+import { color } from "../../constants/color";
 import { LogoDark } from "../../constants/data/logoDark";
 
 import { footerContentText } from "../../TextContent/text";
@@ -44,7 +44,7 @@ export const RootFooter: React.FC = () => {
 
   return (
     <Style.ContainerParent>
-      <Container >
+      <Container>
         <Style.ContainerGrid container>
           <Style.LogoGrid xs={12} sm={12} md={3} item>
             <Style.AHref href="#">
@@ -75,7 +75,7 @@ export const RootFooter: React.FC = () => {
 
             <Style.ul>
               <Style.li>
-                <AccessTimeOutlinedIcon style={{color: "white"}} />
+                <AccessTimeOutlinedIcon style={{ color: "white" }} />
                 <Style.TextContact>
                   {footerContentText.timeWork}
                 </Style.TextContact>
@@ -90,7 +90,7 @@ export const RootFooter: React.FC = () => {
               </Style.li> */}
 
               <Style.li>
-                <EmailOutlinedIcon style={{color: "white"}} />
+                <EmailOutlinedIcon style={{ color: "white" }} />
                 <Style.TextContact>
                   {" "}
                   {footerContentText.email}
@@ -98,7 +98,7 @@ export const RootFooter: React.FC = () => {
               </Style.li>
 
               <Style.li>
-                <LocationOnOutlinedIcon style={{color: "white"}} />
+                <LocationOnOutlinedIcon style={{ color: "white" }} />
                 <Style.TextContact>
                   {" "}
                   {footerContentText.location}
